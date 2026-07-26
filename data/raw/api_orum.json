@@ -1,0 +1,2985 @@
+[
+  {
+    "placeName": "카카오오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 영평동 2181",
+    "addressDoro": "제주특별자치도 제주시 첨단로 242",
+    "longitude": 126.5695819,
+    "latitude": 33.45058702,
+    "placeUrl": "http://place.map.kakao.com/17578680"
+  },
+  {
+    "placeName": "봉개오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 2613-1",
+    "longitude": 126.5916279,
+    "latitude": 33.49358043,
+    "placeUrl": "http://place.map.kakao.com/241172259"
+  },
+  {
+    "placeName": "수월봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한경면 고산리 3760",
+    "longitude": 126.1631086,
+    "latitude": 33.29476974,
+    "placeUrl": "http://place.map.kakao.com/25294439"
+  },
+  {
+    "placeName": "보리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 신례리 산 2-1",
+    "longitude": 126.6011192,
+    "latitude": 33.34703073,
+    "placeUrl": "http://place.map.kakao.com/25253060"
+  },
+  {
+    "placeName": "두수오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 하례리",
+    "longitude": 126.6051515,
+    "latitude": 33.30522462,
+    "placeUrl": "http://place.map.kakao.com/25218190"
+  },
+  {
+    "placeName": "칡오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 상효동 2308-1",
+    "longitude": 126.6028943,
+    "latitude": 33.28393095,
+    "placeUrl": "http://place.map.kakao.com/8547569"
+  },
+  {
+    "placeName": "월라산",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 신효동 산 1",
+    "addressDoro": "제주특별자치도 서귀포시 월라봉로 76-40",
+    "longitude": 126.6056732,
+    "latitude": 33.27136839,
+    "placeUrl": "http://place.map.kakao.com/8471394"
+  },
+  {
+    "placeName": "고냉이굴오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동",
+    "longitude": 126.6161115,
+    "latitude": 33.47755705,
+    "placeUrl": "http://place.map.kakao.com/25176062"
+  },
+  {
+    "placeName": "안세미오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 산 2",
+    "longitude": 126.6072609,
+    "latitude": 33.46741697,
+    "placeUrl": "http://place.map.kakao.com/27302956"
+  },
+  {
+    "placeName": "족은개오리",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 산 78-1",
+    "addressDoro": "제주특별자치도 제주시 명림로 584",
+    "longitude": 126.6168022,
+    "latitude": 33.43306688,
+    "placeUrl": "http://place.map.kakao.com/10789590"
+  },
+  {
+    "placeName": "성진이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 산 78-2",
+    "longitude": 126.6108449,
+    "latitude": 33.41980553,
+    "placeUrl": "http://place.map.kakao.com/8382357"
+  },
+  {
+    "placeName": "논고악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 신례리 산 2-1",
+    "longitude": 126.6106005,
+    "latitude": 33.35962486,
+    "placeUrl": "http://place.map.kakao.com/8251573"
+  },
+  {
+    "placeName": "수악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 하례리 산 10",
+    "addressDoro": "제주특별자치도 서귀포시 남원읍 516로 1042",
+    "longitude": 126.6094502,
+    "latitude": 33.32463031,
+    "placeUrl": "http://place.map.kakao.com/8455452"
+  },
+  {
+    "placeName": "제지기오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 보목동 275-1",
+    "longitude": 126.6094753,
+    "latitude": 33.24162746,
+    "placeUrl": "http://place.map.kakao.com/10801781"
+  },
+  {
+    "placeName": "큰노루손이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 234-231",
+    "longitude": 126.6217641,
+    "latitude": 33.4587553,
+    "placeUrl": "http://place.map.kakao.com/25379468"
+  },
+  {
+    "placeName": "이승이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 신례리 산 2-4",
+    "longitude": 126.622239,
+    "latitude": 33.34014979,
+    "placeUrl": "http://place.map.kakao.com/25342411"
+  },
+  {
+    "placeName": "보롬이",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 대정읍 무릉리 3526-3",
+    "longitude": 126.1923061,
+    "latitude": 33.27052506,
+    "placeUrl": "http://place.map.kakao.com/11299651"
+  },
+  {
+    "placeName": "족은절물오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동",
+    "longitude": 126.6330819,
+    "latitude": 33.43120831,
+    "placeUrl": "http://place.map.kakao.com/25361139"
+  },
+  {
+    "placeName": "궤펜이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 산 137-1",
+    "longitude": 126.6338666,
+    "latitude": 33.39412471,
+    "placeUrl": "http://place.map.kakao.com/11267601"
+  },
+  {
+    "placeName": "사려니남서쪽",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 위미리 산 1-1",
+    "longitude": 126.6394809,
+    "latitude": 33.34061668,
+    "placeUrl": "http://place.map.kakao.com/7916415"
+  },
+  {
+    "placeName": "족은지그리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 산 115",
+    "longitude": 126.645992,
+    "latitude": 33.45027513,
+    "placeUrl": "http://place.map.kakao.com/8060802"
+  },
+  {
+    "placeName": "사려니",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 한남리 산 2-1",
+    "longitude": 126.6458301,
+    "latitude": 33.34017512,
+    "placeUrl": "http://place.map.kakao.com/7916414"
+  },
+  {
+    "placeName": "생길이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 신례리 산 33-1",
+    "longitude": 126.6425165,
+    "latitude": 33.3056524,
+    "placeUrl": "http://place.map.kakao.com/25278387"
+  },
+  {
+    "placeName": "물찻오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 산 137-1",
+    "longitude": 126.6528746,
+    "latitude": 33.39484743,
+    "placeUrl": "http://place.map.kakao.com/10417720"
+  },
+  {
+    "placeName": "거린족은오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 한남리 산 2-1",
+    "longitude": 126.6613643,
+    "latitude": 33.34953039,
+    "placeUrl": "http://place.map.kakao.com/25173313"
+  },
+  {
+    "placeName": "머체오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 한남리 산 2-1",
+    "longitude": 126.6596668,
+    "latitude": 33.34043651,
+    "placeUrl": "http://place.map.kakao.com/8360323"
+  },
+  {
+    "placeName": "넙거리",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 한남리 산 2-1",
+    "longitude": 126.6524583,
+    "latitude": 33.33492207,
+    "placeUrl": "http://place.map.kakao.com/8226028"
+  },
+  {
+    "placeName": "비양봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 협재리 산 100-1",
+    "longitude": 126.226973,
+    "latitude": 33.40945313,
+    "placeUrl": "http://place.map.kakao.com/7915415"
+  },
+  {
+    "placeName": "돔배오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 산 64",
+    "longitude": 126.6692249,
+    "latitude": 33.42785861,
+    "placeUrl": "http://place.map.kakao.com/7834108"
+  },
+  {
+    "placeName": "정월오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 금능리 565-22",
+    "longitude": 126.2415609,
+    "latitude": 33.36365587,
+    "placeUrl": "http://place.map.kakao.com/25359280"
+  },
+  {
+    "placeName": "서우봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 함덕리 169-3",
+    "longitude": 126.6775859,
+    "latitude": 33.54584155,
+    "placeUrl": "http://place.map.kakao.com/25280784"
+  },
+  {
+    "placeName": "꾀꼬리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 대흘리 산 33",
+    "longitude": 126.6791002,
+    "latitude": 33.46115294,
+    "placeUrl": "http://place.map.kakao.com/8241683"
+  },
+  {
+    "placeName": "민오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 수망리 산 158-1",
+    "longitude": 126.6770306,
+    "latitude": 33.35018612,
+    "placeUrl": "http://place.map.kakao.com/10412117"
+  },
+  {
+    "placeName": "저지오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한경면 저지리 51",
+    "longitude": 126.2509837,
+    "latitude": 33.3340641,
+    "placeUrl": "http://place.map.kakao.com/85419607"
+  },
+  {
+    "placeName": "구두리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 가시리 산 158-2",
+    "longitude": 126.6880416,
+    "latitude": 33.4099608,
+    "placeUrl": "http://place.map.kakao.com/8191728"
+  },
+  {
+    "placeName": "가문이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 가시리 산 158-2",
+    "longitude": 126.6882072,
+    "latitude": 33.40213611,
+    "placeUrl": "http://place.map.kakao.com/8111492"
+  },
+  {
+    "placeName": "쳇망오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 가시리 산 158-2",
+    "longitude": 126.6919455,
+    "latitude": 33.39553842,
+    "placeUrl": "http://place.map.kakao.com/11234528"
+  },
+  {
+    "placeName": "물영아리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 수망리 산 188",
+    "longitude": 126.6920637,
+    "latitude": 33.36839465,
+    "placeUrl": "http://place.map.kakao.com/7873185"
+  },
+  {
+    "placeName": "망오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 상명리 산 5",
+    "longitude": 126.2608559,
+    "latitude": 33.3656719,
+    "placeUrl": "http://place.map.kakao.com/15150233"
+  },
+  {
+    "placeName": "우진제비오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 선흘리 산 112",
+    "longitude": 126.6994496,
+    "latitude": 33.46778927,
+    "placeUrl": "http://place.map.kakao.com/8460981"
+  },
+  {
+    "placeName": "산굼부리",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 166-2",
+    "longitude": 126.693832,
+    "latitude": 33.43257409,
+    "placeUrl": "http://place.map.kakao.com/21348535"
+  },
+  {
+    "placeName": "밝은오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 상명리 1697",
+    "longitude": 126.2660258,
+    "latitude": 33.36087092,
+    "placeUrl": "http://place.map.kakao.com/11070664"
+  },
+  {
+    "placeName": "마중오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한경면 저지리 2143-8",
+    "longitude": 126.2706087,
+    "latitude": 33.33465243,
+    "placeUrl": "http://place.map.kakao.com/10337128"
+  },
+  {
+    "placeName": "넉시악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 의귀리 531",
+    "longitude": 126.7147835,
+    "latitude": 33.30618821,
+    "placeUrl": "http://place.map.kakao.com/8224254"
+  },
+  {
+    "placeName": "백리악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 의귀리 1401-23",
+    "longitude": 126.714683,
+    "latitude": 33.3060302,
+    "placeUrl": "http://place.map.kakao.com/228825285"
+  },
+  {
+    "placeName": "명월오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 명월리",
+    "longitude": 126.2789974,
+    "latitude": 33.38260324,
+    "placeUrl": "http://place.map.kakao.com/10339539"
+  },
+  {
+    "placeName": "방주오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 명월리 679",
+    "longitude": 126.28296,
+    "latitude": 33.37903424,
+    "placeUrl": "http://place.map.kakao.com/10393740"
+  },
+  {
+    "placeName": "금산",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 대정읍 상모리 977",
+    "longitude": 126.2853974,
+    "latitude": 33.23513871,
+    "placeUrl": "http://place.map.kakao.com/8222952"
+  },
+  {
+    "placeName": "동알오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 대정읍 상모리 152",
+    "longitude": 126.2881303,
+    "latitude": 33.20741704,
+    "placeUrl": "http://place.map.kakao.com/7849255"
+  },
+  {
+    "placeName": "큰사슴이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 가시리 산 68-9",
+    "longitude": 126.729544,
+    "latitude": 33.39914417,
+    "placeUrl": "http://place.map.kakao.com/25204904"
+  },
+  {
+    "placeName": "여절악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 신흥리 산 18",
+    "longitude": 126.7364642,
+    "latitude": 33.34893076,
+    "placeUrl": "http://place.map.kakao.com/8004025"
+  },
+  {
+    "placeName": "금오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 금악리 산 1-1",
+    "longitude": 126.3058389,
+    "latitude": 33.35457233,
+    "placeUrl": "http://place.map.kakao.com/25189061"
+  },
+  {
+    "placeName": "거친오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 84-2",
+    "longitude": 126.7405421,
+    "latitude": 33.45964411,
+    "placeUrl": "http://place.map.kakao.com/25173826"
+  },
+  {
+    "placeName": "감은이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 297",
+    "longitude": 126.7411777,
+    "latitude": 33.42346025,
+    "placeUrl": "http://place.map.kakao.com/8676274"
+  },
+  {
+    "placeName": "눈오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 2952-2",
+    "longitude": 126.3110467,
+    "latitude": 33.40847348,
+    "placeUrl": "http://place.map.kakao.com/8221826"
+  },
+  {
+    "placeName": "웃선족이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 140-2",
+    "longitude": 126.7477687,
+    "latitude": 33.44208307,
+    "placeUrl": "http://place.map.kakao.com/8026958"
+  },
+  {
+    "placeName": "선족이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 141",
+    "longitude": 126.7515468,
+    "latitude": 33.44280297,
+    "placeUrl": "http://place.map.kakao.com/246058408"
+  },
+  {
+    "placeName": "성불오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 266",
+    "longitude": 126.7499887,
+    "latitude": 33.422125,
+    "placeUrl": "http://place.map.kakao.com/7951103"
+  },
+  {
+    "placeName": "병곳오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 가시리 산 8",
+    "longitude": 126.7483755,
+    "latitude": 33.367042,
+    "placeUrl": "http://place.map.kakao.com/11302272"
+  },
+  {
+    "placeName": "소소름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 토산리 2003",
+    "longitude": 126.7552111,
+    "latitude": 33.34420856,
+    "placeUrl": "http://place.map.kakao.com/10548055"
+  },
+  {
+    "placeName": "과오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 곽지리 산 4",
+    "longitude": 126.3231724,
+    "latitude": 33.44619694,
+    "placeUrl": "http://place.map.kakao.com/25180821"
+  },
+  {
+    "placeName": "세미소",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 금악리 363",
+    "longitude": 126.3199453,
+    "latitude": 33.35134693,
+    "placeUrl": "http://place.map.kakao.com/7949685"
+  },
+  {
+    "placeName": "어대오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 덕천리 509-1",
+    "longitude": 126.7608302,
+    "latitude": 33.49564991,
+    "placeUrl": "http://place.map.kakao.com/8422867"
+  },
+  {
+    "placeName": "밧돌오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 66-1",
+    "longitude": 126.76007,
+    "latitude": 33.46071398,
+    "placeUrl": "http://place.map.kakao.com/7896521"
+  },
+  {
+    "placeName": "거슨세미오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 145",
+    "longitude": 126.7601311,
+    "latitude": 33.4502293,
+    "placeUrl": "http://place.map.kakao.com/8174706"
+  },
+  {
+    "placeName": "모지오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 성읍리 산 22",
+    "longitude": 126.7681385,
+    "latitude": 33.39361693,
+    "placeUrl": "http://place.map.kakao.com/10328747"
+  },
+  {
+    "placeName": "밝은오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 금악리",
+    "longitude": 126.3359411,
+    "latitude": 33.35113777,
+    "placeUrl": "http://place.map.kakao.com/25243139"
+  },
+  {
+    "placeName": "당오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 199-1",
+    "longitude": 126.7786029,
+    "latitude": 33.46659989,
+    "placeUrl": "http://place.map.kakao.com/7814539"
+  },
+  {
+    "placeName": "돌리미오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 255-1",
+    "longitude": 126.7727027,
+    "latitude": 33.4318412,
+    "placeUrl": "http://place.map.kakao.com/25213746"
+  },
+  {
+    "placeName": "개오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 성읍리 2974",
+    "longitude": 126.771856,
+    "latitude": 33.42256836,
+    "placeUrl": "http://place.map.kakao.com/10620522"
+  },
+  {
+    "placeName": "장자오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 성읍리 2759-1",
+    "longitude": 126.7756111,
+    "latitude": 33.38892783,
+    "placeUrl": "http://place.map.kakao.com/8055384"
+  },
+  {
+    "placeName": "설오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 가시리 산 1",
+    "longitude": 126.7695523,
+    "latitude": 33.37106377,
+    "placeUrl": "http://place.map.kakao.com/7946961"
+  },
+  {
+    "placeName": "토산봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 토산리 산 13",
+    "longitude": 126.7742727,
+    "latitude": 33.32200787,
+    "placeUrl": "http://place.map.kakao.com/8108616"
+  },
+  {
+    "placeName": "고내봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 고내리 산 3-1",
+    "longitude": 126.3414192,
+    "latitude": 33.45923568,
+    "placeUrl": "http://place.map.kakao.com/8649358"
+  },
+  {
+    "placeName": "이달이촛대봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 산 71-1",
+    "longitude": 126.3470044,
+    "latitude": 33.3663686,
+    "placeUrl": "http://place.map.kakao.com/8490593"
+  },
+  {
+    "placeName": "밝은오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 동광리 736",
+    "longitude": 126.3414721,
+    "latitude": 33.30124982,
+    "placeUrl": "http://place.map.kakao.com/7888984"
+  },
+  {
+    "placeName": "갑선이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 가시리 산 2",
+    "longitude": 126.7816635,
+    "latitude": 33.36085587,
+    "placeUrl": "http://place.map.kakao.com/25169758"
+  },
+  {
+    "placeName": "높은오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 213-1",
+    "longitude": 126.793069,
+    "latitude": 33.45641147,
+    "placeUrl": "http://place.map.kakao.com/25199090"
+  },
+  {
+    "placeName": "영주산",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 성읍리 산 18-1",
+    "longitude": 126.7962385,
+    "latitude": 33.4045668,
+    "placeUrl": "http://place.map.kakao.com/8018193"
+  },
+  {
+    "placeName": "개오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 상천리 산 103",
+    "longitude": 126.3692336,
+    "latitude": 33.3159864,
+    "placeUrl": "http://place.map.kakao.com/237412511"
+  },
+  {
+    "placeName": "군산오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 창천리 산 3-1",
+    "longitude": 126.3699703,
+    "latitude": 33.25323961,
+    "placeUrl": "http://place.map.kakao.com/25186462"
+  },
+  {
+    "placeName": "동검은이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 종달리 산 70",
+    "longitude": 126.8036721,
+    "latitude": 33.44894445,
+    "placeUrl": "http://place.map.kakao.com/25214418"
+  },
+  {
+    "placeName": "좌보미오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 성읍리 산 6",
+    "longitude": 126.806767,
+    "latitude": 33.43609685,
+    "placeUrl": "http://place.map.kakao.com/26974939"
+  },
+  {
+    "placeName": "월랑지",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 성읍리 산 5",
+    "longitude": 126.8096412,
+    "latitude": 33.43914964,
+    "placeUrl": "http://place.map.kakao.com/8042882"
+  },
+  {
+    "placeName": "아심전지",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 하천리 2046-2",
+    "longitude": 126.8078865,
+    "latitude": 33.36768572,
+    "placeUrl": "http://place.map.kakao.com/228853061"
+  },
+  {
+    "placeName": "북돌아진 오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 산 41",
+    "longitude": 126.3738009,
+    "latitude": 33.3563546,
+    "placeUrl": "http://place.map.kakao.com/7906497"
+  },
+  {
+    "placeName": "폭낭오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 산 43",
+    "longitude": 126.3819477,
+    "latitude": 33.35212181,
+    "placeUrl": "http://place.map.kakao.com/8576933"
+  },
+  {
+    "placeName": "더더오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 상예동 4389-2",
+    "longitude": 126.373608,
+    "latitude": 33.27685511,
+    "placeUrl": "http://place.map.kakao.com/8264639"
+  },
+  {
+    "placeName": "손지오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 종달리 산 52",
+    "longitude": 126.8194166,
+    "latitude": 33.45528596,
+    "placeUrl": "http://place.map.kakao.com/246072041"
+  },
+  {
+    "placeName": "걸리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 신풍리 1576",
+    "longitude": 126.8149448,
+    "latitude": 33.37594447,
+    "placeUrl": "http://place.map.kakao.com/25174765"
+  },
+  {
+    "placeName": "도청오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 표선리 산 4-1",
+    "longitude": 126.8152552,
+    "latitude": 33.31498065,
+    "placeUrl": "http://place.map.kakao.com/10307727"
+  },
+  {
+    "placeName": "검은데기오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 소길리 산 118",
+    "longitude": 126.3860448,
+    "latitude": 33.41868025,
+    "placeUrl": "http://place.map.kakao.com/11039987"
+  },
+  {
+    "placeName": "큰바리메",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 어음리 산 21",
+    "longitude": 126.3880198,
+    "latitude": 33.37713081,
+    "placeUrl": "http://place.map.kakao.com/7888119"
+  },
+  {
+    "placeName": "도래오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 어음리 산 26-23",
+    "longitude": 126.3928586,
+    "latitude": 33.35797477,
+    "placeUrl": "http://place.map.kakao.com/25210557"
+  },
+  {
+    "placeName": "하늬보기",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 상천리 산 89-1",
+    "longitude": 126.3915393,
+    "latitude": 33.32692778,
+    "placeUrl": "http://place.map.kakao.com/8144640"
+  },
+  {
+    "placeName": "마보기",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 상천리 산 83",
+    "longitude": 126.392997,
+    "latitude": 33.32038021,
+    "placeUrl": "http://place.map.kakao.com/7865729"
+  },
+  {
+    "placeName": "용눈이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 종달리 산 28",
+    "longitude": 126.832683,
+    "latitude": 33.45988024,
+    "placeUrl": "http://place.map.kakao.com/10626439"
+  },
+  {
+    "placeName": "돌미오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 수산리 4535",
+    "longitude": 126.8291494,
+    "latitude": 33.43796629,
+    "placeUrl": "http://place.map.kakao.com/25034428"
+  },
+  {
+    "placeName": "모구리알오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 난산리 2960-1",
+    "longitude": 126.8279721,
+    "latitude": 33.40727732,
+    "placeUrl": "http://place.map.kakao.com/7866881"
+  },
+  {
+    "placeName": "나시리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 난산리 2817",
+    "longitude": 126.8335694,
+    "latitude": 33.41421117,
+    "placeUrl": "http://place.map.kakao.com/25192315"
+  },
+  {
+    "placeName": "제석오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 하천리 429-1",
+    "longitude": 126.8358697,
+    "latitude": 33.34751958,
+    "placeUrl": "http://place.map.kakao.com/8076561"
+  },
+  {
+    "placeName": "파군봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 하귀1리 688-1",
+    "longitude": 126.4126908,
+    "latitude": 33.47870571,
+    "placeUrl": "http://place.map.kakao.com/10889367"
+  },
+  {
+    "placeName": "다래오름북동쪽",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 산 1",
+    "longitude": 126.4097583,
+    "latitude": 33.36202692,
+    "placeUrl": "http://place.map.kakao.com/17788460"
+  },
+  {
+    "placeName": "모라리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 색달동 산 16-1",
+    "longitude": 126.4139366,
+    "latitude": 33.30157483,
+    "placeUrl": "http://place.map.kakao.com/7868596"
+  },
+  {
+    "placeName": "유건에오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 난산리 2302",
+    "longitude": 126.8458058,
+    "latitude": 33.41322258,
+    "placeUrl": "http://place.map.kakao.com/8477757"
+  },
+  {
+    "placeName": "안오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 고성리",
+    "longitude": 126.4143813,
+    "latitude": 33.45131436,
+    "placeUrl": "http://place.map.kakao.com/25310024"
+  },
+  {
+    "placeName": "극락오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 고성리 1032",
+    "longitude": 126.4145331,
+    "latitude": 33.43448322,
+    "placeUrl": "http://place.map.kakao.com/25187989"
+  },
+  {
+    "placeName": "통오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 난산리 1976-1",
+    "longitude": 126.8560385,
+    "latitude": 33.39305307,
+    "placeUrl": "http://place.map.kakao.com/8128672"
+  },
+  {
+    "placeName": "녹하지악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 중문동 산 5",
+    "addressDoro": "제주특별자치도 서귀포시 산록남로 1391",
+    "longitude": 126.4308812,
+    "latitude": 33.30464154,
+    "placeUrl": "http://place.map.kakao.com/8228030"
+  },
+  {
+    "placeName": "소왕산",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 시흥리 2160",
+    "longitude": 126.8768135,
+    "latitude": 33.46431105,
+    "placeUrl": "http://place.map.kakao.com/7959730"
+  },
+  {
+    "placeName": "민모루오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 중문동 산 1-3",
+    "longitude": 126.4555505,
+    "latitude": 33.32535308,
+    "placeUrl": "http://place.map.kakao.com/7883453"
+  },
+  {
+    "placeName": "두산봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 시흥리 2661",
+    "longitude": 126.8873917,
+    "latitude": 33.47711944,
+    "placeUrl": "http://place.map.kakao.com/10289213"
+  },
+  {
+    "placeName": "밝은오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 해안동 465",
+    "longitude": 126.4647283,
+    "latitude": 33.44015025,
+    "placeUrl": "http://place.map.kakao.com/8385072"
+  },
+  {
+    "placeName": "냇새오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 광령리",
+    "longitude": 126.4615833,
+    "latitude": 33.39232204,
+    "placeUrl": "http://place.map.kakao.com/25195576"
+  },
+  {
+    "placeName": "한라산 삼형제큰오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 색달동 산 1-3",
+    "longitude": 126.4603308,
+    "latitude": 33.357749,
+    "placeUrl": "http://place.map.kakao.com/7923716"
+  },
+  {
+    "placeName": "도레오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 중문동 산 1-1",
+    "longitude": 126.4613413,
+    "latitude": 33.33497239,
+    "placeUrl": "http://place.map.kakao.com/10263050"
+  },
+  {
+    "placeName": "대수산봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 고성리 2039-1",
+    "longitude": 126.9016497,
+    "latitude": 33.43967509,
+    "placeUrl": "http://place.map.kakao.com/25206111"
+  },
+  {
+    "placeName": "한라산 왕오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 중문동 산 1",
+    "longitude": 126.4750409,
+    "latitude": 33.35495937,
+    "placeUrl": "http://place.map.kakao.com/8024164"
+  },
+  {
+    "placeName": "법정악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 하원동 산 1-1",
+    "longitude": 126.4696061,
+    "latitude": 33.31361084,
+    "placeUrl": "http://place.map.kakao.com/7901044"
+  },
+  {
+    "placeName": "쳇망오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 광령리 산 183-6",
+    "longitude": 126.4881161,
+    "latitude": 33.37162522,
+    "placeUrl": "http://place.map.kakao.com/7863048"
+  },
+  {
+    "placeName": "남짓은오름 (폐쇄)",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 연동 산 20-2",
+    "longitude": 126.4972587,
+    "latitude": 33.47250857,
+    "placeUrl": "http://place.map.kakao.com/25193943"
+  },
+  {
+    "placeName": "상여오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 연동 1026-3",
+    "longitude": 126.4916998,
+    "latitude": 33.46571673,
+    "placeUrl": "http://place.map.kakao.com/7925330"
+  },
+  {
+    "placeName": "검은오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 연동 산 110-1",
+    "longitude": 126.4985671,
+    "latitude": 33.44293879,
+    "placeUrl": "http://place.map.kakao.com/8170465"
+  },
+  {
+    "placeName": "만세동산",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 광령리 산 183-6",
+    "longitude": 126.5060109,
+    "latitude": 33.36819407,
+    "placeUrl": "http://place.map.kakao.com/7870117"
+  },
+  {
+    "placeName": "한라산 웃세족은오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 광령리 산 183-6",
+    "longitude": 126.5108391,
+    "latitude": 33.36102374,
+    "placeUrl": "http://place.map.kakao.com/8076005"
+  },
+  {
+    "placeName": "한라산 큰드레큰두레왓",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 해안동 산 220-12",
+    "longitude": 126.5214302,
+    "latitude": 33.37802612,
+    "placeUrl": "http://place.map.kakao.com/8121105"
+  },
+  {
+    "placeName": "한라산 웃세누운오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 영남동 산 1-1",
+    "longitude": 126.5139637,
+    "latitude": 33.36098913,
+    "placeUrl": "http://place.map.kakao.com/12777859"
+  },
+  {
+    "placeName": "시오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 서호동 산 1",
+    "longitude": 126.516669,
+    "latitude": 33.30596956,
+    "placeUrl": "http://place.map.kakao.com/25297520"
+  },
+  {
+    "placeName": "큰두레왓",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 해안동 산 220-12",
+    "longitude": 126.522045,
+    "latitude": 33.37663009,
+    "placeUrl": "http://place.map.kakao.com/235012764"
+  },
+  {
+    "placeName": "방애오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 동홍동 산 1-1",
+    "longitude": 126.5275358,
+    "latitude": 33.3542695,
+    "placeUrl": "http://place.map.kakao.com/7890028"
+  },
+  {
+    "placeName": "웃방애오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 동홍동 산 1-1",
+    "longitude": 126.5299311,
+    "latitude": 33.35696089,
+    "placeUrl": "http://place.map.kakao.com/11181281"
+  },
+  {
+    "placeName": "망동산",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 우도면 연평리 산 6",
+    "longitude": 126.962404,
+    "latitude": 33.49802084,
+    "placeUrl": "http://place.map.kakao.com/7870134"
+  },
+  {
+    "placeName": "오구시오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 오등동 570-1",
+    "longitude": 126.5350609,
+    "latitude": 33.47002527,
+    "placeUrl": "http://place.map.kakao.com/8011701"
+  },
+  {
+    "placeName": "권제오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 아라일동 350",
+    "longitude": 126.5583136,
+    "latitude": 33.45691901,
+    "placeUrl": "http://place.map.kakao.com/8676017"
+  },
+  {
+    "placeName": "삼의악오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 아라일동 산 24-2",
+    "longitude": 126.5622968,
+    "latitude": 33.43911118,
+    "placeUrl": "http://place.map.kakao.com/7953866"
+  },
+  {
+    "placeName": "돌오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 월평동 산 6-9",
+    "longitude": 126.5685472,
+    "latitude": 33.38060253,
+    "placeUrl": "http://place.map.kakao.com/7833931"
+  },
+  {
+    "placeName": "인정오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 토평동 1952",
+    "longitude": 126.5848637,
+    "latitude": 33.28419121,
+    "placeUrl": "http://place.map.kakao.com/8551890"
+  },
+  {
+    "placeName": "살손장오리",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 월평동 산 6",
+    "longitude": 126.5957559,
+    "latitude": 33.40638643,
+    "placeUrl": "http://place.map.kakao.com/7984402"
+  },
+  {
+    "placeName": "불칸디오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 월평동 산 6",
+    "longitude": 126.5924803,
+    "latitude": 33.39719192,
+    "placeUrl": "http://place.map.kakao.com/234999276"
+  },
+  {
+    "placeName": "어후오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 산 137-2",
+    "longitude": 126.5936033,
+    "latitude": 33.39123866,
+    "placeUrl": "http://place.map.kakao.com/7992566"
+  },
+  {
+    "placeName": "성널오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 신례리 산 2-1",
+    "longitude": 126.5916374,
+    "latitude": 33.37376978,
+    "placeUrl": "http://place.map.kakao.com/8385052"
+  },
+  {
+    "placeName": "논오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 삼양일동 555-2",
+    "longitude": 126.5987952,
+    "latitude": 33.51746816,
+    "placeUrl": "http://place.map.kakao.com/8191971"
+  },
+  {
+    "placeName": "열안지오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 778-2",
+    "longitude": 126.6053526,
+    "latitude": 33.47307477,
+    "placeUrl": "http://place.map.kakao.com/25319845"
+  },
+  {
+    "placeName": "테역장오리",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 산 78-2",
+    "longitude": 126.6032474,
+    "latitude": 33.41090784,
+    "placeUrl": "http://place.map.kakao.com/8109792"
+  },
+  {
+    "placeName": "영천악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 상효동 2364",
+    "longitude": 126.6008224,
+    "latitude": 33.29526677,
+    "placeUrl": "http://place.map.kakao.com/11189551"
+  },
+  {
+    "placeName": "설오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 신효동 1028",
+    "longitude": 126.6049353,
+    "latitude": 33.25599145,
+    "placeUrl": "http://place.map.kakao.com/7939481"
+  },
+  {
+    "placeName": "당산봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한경면 용수리 산 28",
+    "longitude": 126.1729781,
+    "latitude": 33.30774396,
+    "placeUrl": "http://place.map.kakao.com/7814429"
+  },
+  {
+    "placeName": "칡오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 466-2",
+    "longitude": 126.6127,
+    "latitude": 33.47536637,
+    "placeUrl": "http://place.map.kakao.com/8111773"
+  },
+  {
+    "placeName": "개월이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 산 78-1",
+    "longitude": 126.6127004,
+    "latitude": 33.42663921,
+    "placeUrl": "http://place.map.kakao.com/7937029"
+  },
+  {
+    "placeName": "족은개월이",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 산 78-1",
+    "longitude": 126.6167696,
+    "latitude": 33.42899423,
+    "placeUrl": "http://place.map.kakao.com/241130911"
+  },
+  {
+    "placeName": "거친오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 산 66",
+    "longitude": 126.6194858,
+    "latitude": 33.44450029,
+    "placeUrl": "http://place.map.kakao.com/10129920"
+  },
+  {
+    "placeName": "민오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 산 64",
+    "longitude": 126.6370805,
+    "latitude": 33.43725543,
+    "placeUrl": "http://place.map.kakao.com/7879348"
+  },
+  {
+    "placeName": "구그네오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 와흘리 957",
+    "longitude": 126.6392526,
+    "latitude": 33.49054739,
+    "placeUrl": "http://place.map.kakao.com/8191401"
+  },
+  {
+    "placeName": "판포오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한경면 판포리 934",
+    "longitude": 126.2135209,
+    "latitude": 33.35806464,
+    "placeUrl": "http://place.map.kakao.com/8112433"
+  },
+  {
+    "placeName": "말찻오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 산 137-1",
+    "longitude": 126.6542471,
+    "latitude": 33.40056929,
+    "placeUrl": "http://place.map.kakao.com/7860797"
+  },
+  {
+    "placeName": "마흐니",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 수망리 산 203",
+    "longitude": 126.6586027,
+    "latitude": 33.37966391,
+    "placeUrl": "http://place.map.kakao.com/7864566"
+  },
+  {
+    "placeName": "세미오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 대흘리 산 27-8",
+    "longitude": 126.6694218,
+    "latitude": 33.47404749,
+    "placeUrl": "http://place.map.kakao.com/10566814"
+  },
+  {
+    "placeName": "송아오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한경면 조수리 134",
+    "longitude": 126.2385686,
+    "latitude": 33.33563763,
+    "placeUrl": "http://place.map.kakao.com/7957264"
+  },
+  {
+    "placeName": "붉은오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 가시리 산 158",
+    "longitude": 126.6795385,
+    "latitude": 33.39985819,
+    "placeUrl": "http://place.map.kakao.com/10455841"
+  },
+  {
+    "placeName": "자배봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 위미리 산 132-2",
+    "longitude": 126.6769392,
+    "latitude": 33.30100229,
+    "placeUrl": "http://place.map.kakao.com/11158780"
+  },
+  {
+    "placeName": "가메창",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한경면 저지리 1469",
+    "longitude": 126.2485824,
+    "latitude": 33.3297625,
+    "placeUrl": "http://place.map.kakao.com/8109089"
+  },
+  {
+    "placeName": "가마오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한경면 청수리 1202-1",
+    "longitude": 126.2470142,
+    "latitude": 33.30554955,
+    "placeUrl": "http://place.map.kakao.com/9440927"
+  },
+  {
+    "placeName": "당오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 와산리 산 7-5",
+    "longitude": 126.6876249,
+    "latitude": 33.47856124,
+    "placeUrl": "http://place.map.kakao.com/7814464"
+  },
+  {
+    "placeName": "방애오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 산 45",
+    "longitude": 126.6845195,
+    "latitude": 33.44392454,
+    "placeUrl": "http://place.map.kakao.com/10810149"
+  },
+  {
+    "placeName": "모슬봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 대정읍 상모리 3540-2",
+    "longitude": 126.2586578,
+    "latitude": 33.23873924,
+    "placeUrl": "http://place.map.kakao.com/7876363"
+  },
+  {
+    "placeName": "민오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 선흘리 산 142",
+    "longitude": 126.6951111,
+    "latitude": 33.4484194,
+    "placeUrl": "http://place.map.kakao.com/7881286"
+  },
+  {
+    "placeName": "여문영아리",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 가시리 산 145",
+    "longitude": 126.6942338,
+    "latitude": 33.3826582,
+    "placeUrl": "http://place.map.kakao.com/17788803"
+  },
+  {
+    "placeName": "골체오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 선흘리 1912",
+    "longitude": 126.7045841,
+    "latitude": 33.45070086,
+    "placeUrl": "http://place.map.kakao.com/8188069"
+  },
+  {
+    "placeName": "부대악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 선흘리 산 103-1",
+    "longitude": 126.7085198,
+    "latitude": 33.44641942,
+    "placeUrl": "http://place.map.kakao.com/10471809"
+  },
+  {
+    "placeName": "섯알오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 대정읍 상모리 1593-2",
+    "longitude": 126.2812168,
+    "latitude": 33.20649191,
+    "placeUrl": "http://place.map.kakao.com/25284265"
+  },
+  {
+    "placeName": "거문오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 선흘리 산 102-1",
+    "longitude": 126.718256,
+    "latitude": 33.45483859,
+    "placeUrl": "http://place.map.kakao.com/18489468"
+  },
+  {
+    "placeName": "웅악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 수망리 127",
+    "longitude": 126.7243152,
+    "latitude": 33.3308097,
+    "placeUrl": "http://place.map.kakao.com/8027471"
+  },
+  {
+    "placeName": "갯거리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 명월리 18",
+    "longitude": 126.2927281,
+    "latitude": 33.37575529,
+    "placeUrl": "http://place.map.kakao.com/8650849"
+  },
+  {
+    "placeName": "선소오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 금악리 2785-1",
+    "longitude": 126.2909149,
+    "latitude": 33.372895,
+    "placeUrl": "http://place.map.kakao.com/25283148"
+  },
+  {
+    "placeName": "문도지오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 금악리 3445",
+    "longitude": 126.2946137,
+    "latitude": 33.32625021,
+    "placeUrl": "http://place.map.kakao.com/7875147"
+  },
+  {
+    "placeName": "단산",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 대정읍 인성리 21-2",
+    "longitude": 126.2883335,
+    "latitude": 33.24286074,
+    "placeUrl": "http://place.map.kakao.com/8306005"
+  },
+  {
+    "placeName": "천아오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 상대리 1689",
+    "longitude": 126.2988885,
+    "latitude": 33.40457812,
+    "placeUrl": "http://place.map.kakao.com/8099434"
+  },
+  {
+    "placeName": "남송이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 서광리 산 31",
+    "longitude": 126.306819,
+    "latitude": 33.31221422,
+    "placeUrl": "http://place.map.kakao.com/8231118"
+  },
+  {
+    "placeName": "북오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 덕천리 산 69",
+    "longitude": 126.740167,
+    "latitude": 33.48729193,
+    "placeUrl": "http://place.map.kakao.com/7912662"
+  },
+  {
+    "placeName": "말젯오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 곽지리 1085",
+    "longitude": 126.3154714,
+    "latitude": 33.45011894,
+    "placeUrl": "http://place.map.kakao.com/17786069"
+  },
+  {
+    "placeName": "넙게오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 서광리 943",
+    "longitude": 126.3173631,
+    "latitude": 33.28792468,
+    "placeUrl": "http://place.map.kakao.com/8244203"
+  },
+  {
+    "placeName": "광해악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 서광리 929",
+    "longitude": 126.3175442,
+    "latitude": 33.28769756,
+    "placeUrl": "http://place.map.kakao.com/237377496"
+  },
+  {
+    "placeName": "종제기오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 덕천리 1307",
+    "longitude": 126.7558357,
+    "latitude": 33.479286,
+    "placeUrl": "http://place.map.kakao.com/8520293"
+  },
+  {
+    "placeName": "체오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 덕천리 산 2",
+    "longitude": 126.7494421,
+    "latitude": 33.4656608,
+    "placeUrl": "http://place.map.kakao.com/8094829"
+  },
+  {
+    "placeName": "안돌오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 66-2",
+    "longitude": 126.7558689,
+    "latitude": 33.45783055,
+    "placeUrl": "http://place.map.kakao.com/8428406"
+  },
+  {
+    "placeName": "알선족이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 140-2",
+    "longitude": 126.7490993,
+    "latitude": 33.44312443,
+    "placeUrl": "http://place.map.kakao.com/7997933"
+  },
+  {
+    "placeName": "따라비오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 가시리 산 63",
+    "longitude": 126.7528584,
+    "latitude": 33.38870699,
+    "placeUrl": "http://place.map.kakao.com/25036598"
+  },
+  {
+    "placeName": "샛오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 곽지리 산 14",
+    "longitude": 126.317176,
+    "latitude": 33.4483468,
+    "placeUrl": "http://place.map.kakao.com/8229310"
+  },
+  {
+    "placeName": "썩은다리",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 화순리 1913",
+    "longitude": 126.3293242,
+    "latitude": 33.24104096,
+    "placeUrl": "http://place.map.kakao.com/11056392"
+  },
+  {
+    "placeName": "입산봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 김녕리 1037-2",
+    "longitude": 126.7582032,
+    "latitude": 33.54756695,
+    "placeUrl": "http://place.map.kakao.com/25343635"
+  },
+  {
+    "placeName": "뒤굽은이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 38",
+    "longitude": 126.7668334,
+    "latitude": 33.4785363,
+    "placeUrl": "http://place.map.kakao.com/7860041"
+  },
+  {
+    "placeName": "민오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 156",
+    "longitude": 126.762803,
+    "latitude": 33.43632531,
+    "placeUrl": "http://place.map.kakao.com/8316763"
+  },
+  {
+    "placeName": "비치미오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 255-1",
+    "longitude": 126.7632386,
+    "latitude": 33.42755797,
+    "placeUrl": "http://place.map.kakao.com/8379747"
+  },
+  {
+    "placeName": "누운오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 금악리 198-15",
+    "longitude": 126.3311916,
+    "latitude": 33.36237779,
+    "placeUrl": "http://place.map.kakao.com/11017083"
+  },
+  {
+    "placeName": "정물오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 금악리 산 52-1",
+    "longitude": 126.3296255,
+    "latitude": 33.33835789,
+    "placeUrl": "http://place.map.kakao.com/25359013"
+  },
+  {
+    "placeName": "거린오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 동광리 산 94",
+    "longitude": 126.331933,
+    "latitude": 33.30313646,
+    "placeUrl": "http://place.map.kakao.com/8168834"
+  },
+  {
+    "placeName": "논오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 상창리 2781",
+    "longitude": 126.3377127,
+    "latitude": 33.27132249,
+    "placeUrl": "http://place.map.kakao.com/25198519"
+  },
+  {
+    "placeName": "염통오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 토산리",
+    "longitude": 126.7776133,
+    "latitude": 33.33108967,
+    "placeUrl": "http://place.map.kakao.com/8476543"
+  },
+  {
+    "placeName": "대물동산",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 1919",
+    "longitude": 126.7857782,
+    "latitude": 33.46526459,
+    "placeUrl": "http://place.map.kakao.com/7823928"
+  },
+  {
+    "placeName": "백약이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 성읍리 산 1",
+    "longitude": 126.7897582,
+    "latitude": 33.43680941,
+    "placeUrl": "http://place.map.kakao.com/25248461"
+  },
+  {
+    "placeName": "문석이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 234",
+    "longitude": 126.7945242,
+    "latitude": 33.44642856,
+    "placeUrl": "http://place.map.kakao.com/25237382"
+  },
+  {
+    "placeName": "족은대비악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 광평리 산 59",
+    "longitude": 126.3690499,
+    "latitude": 33.33045267,
+    "placeUrl": "http://place.map.kakao.com/11153555"
+  },
+  {
+    "placeName": "대병악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 상창리 산 2-1",
+    "longitude": 126.3682578,
+    "latitude": 33.30625848,
+    "placeUrl": "http://place.map.kakao.com/10255199"
+  },
+  {
+    "placeName": "좌보미알오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 성읍리 산 15",
+    "longitude": 126.8073793,
+    "latitude": 33.4310082,
+    "placeUrl": "http://place.map.kakao.com/17788991"
+  },
+  {
+    "placeName": "왕이메오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 광평리 산 79",
+    "longitude": 126.3765749,
+    "latitude": 33.34354683,
+    "placeUrl": "http://place.map.kakao.com/17788831"
+  },
+  {
+    "placeName": "소병악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 상창리 산 2-1",
+    "longitude": 126.3742968,
+    "latitude": 33.3083447,
+    "placeUrl": "http://place.map.kakao.com/7958410"
+  },
+  {
+    "placeName": "손자봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 종달리 산 52",
+    "longitude": 126.8198323,
+    "latitude": 33.45662365,
+    "placeUrl": "http://place.map.kakao.com/7959260"
+  },
+  {
+    "placeName": "하늬오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 상천리 산 97",
+    "longitude": 126.3850196,
+    "latitude": 33.3250059,
+    "placeUrl": "http://place.map.kakao.com/25389741"
+  },
+  {
+    "placeName": "아끈다랑쉬오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 세화리 2593-2",
+    "longitude": 126.830647,
+    "latitude": 33.4741391,
+    "placeUrl": "http://place.map.kakao.com/25303334"
+  },
+  {
+    "placeName": "궁대악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 수산리 4711-8",
+    "longitude": 126.8231417,
+    "latitude": 33.43554155,
+    "placeUrl": "http://place.map.kakao.com/8212572"
+  },
+  {
+    "placeName": "모구리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 난산리 2960-1",
+    "longitude": 126.8286449,
+    "latitude": 33.40901928,
+    "placeUrl": "http://place.map.kakao.com/7868485"
+  },
+  {
+    "placeName": "달산봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 하천리 1043-2",
+    "longitude": 126.8314143,
+    "latitude": 33.34603585,
+    "placeUrl": "http://place.map.kakao.com/7813516"
+  },
+  {
+    "placeName": "영아리",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 상천리 산 24",
+    "longitude": 126.3999639,
+    "latitude": 33.33005226,
+    "placeUrl": "http://place.map.kakao.com/8021042"
+  },
+  {
+    "placeName": "우보악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 색달동 912-1",
+    "longitude": 126.4018024,
+    "latitude": 33.27536205,
+    "placeUrl": "http://place.map.kakao.com/11187864"
+  },
+  {
+    "placeName": "갈마못",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 신풍리",
+    "longitude": 126.8367205,
+    "latitude": 33.3665107,
+    "placeUrl": "http://place.map.kakao.com/12969030"
+  },
+  {
+    "placeName": "동머루",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 신풍리 589",
+    "longitude": 126.8352025,
+    "latitude": 33.37036674,
+    "placeUrl": "http://place.map.kakao.com/228851951"
+  },
+  {
+    "placeName": "알오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 유수암리 산 114",
+    "longitude": 126.4033749,
+    "latitude": 33.41380603,
+    "placeUrl": "http://place.map.kakao.com/7986111"
+  },
+  {
+    "placeName": "궷물오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 유수암리 산 136-6",
+    "longitude": 126.4059387,
+    "latitude": 33.39695302,
+    "placeUrl": "http://place.map.kakao.com/8217224"
+  },
+  {
+    "placeName": "큰노꼬메오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 유수암리 산 138",
+    "longitude": 126.4114582,
+    "latitude": 33.38912818,
+    "placeUrl": "http://place.map.kakao.com/10271092"
+  },
+  {
+    "placeName": "안천이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 상가리 산 124",
+    "longitude": 126.4103561,
+    "latitude": 33.37215569,
+    "placeUrl": "http://place.map.kakao.com/8428549"
+  },
+  {
+    "placeName": "베릿내오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 중문동 3712",
+    "longitude": 126.4215055,
+    "latitude": 33.24733194,
+    "placeUrl": "http://place.map.kakao.com/17809089"
+  },
+  {
+    "placeName": "돌오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 상천리 산 1",
+    "longitude": 126.4297502,
+    "latitude": 33.33702228,
+    "placeUrl": "http://place.map.kakao.com/7834687"
+  },
+  {
+    "placeName": "삼형제오름(말젯오름)",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 색달동 산 1-3",
+    "longitude": 126.4445282,
+    "latitude": 33.35816348,
+    "placeUrl": "http://place.map.kakao.com/7931117"
+  },
+  {
+    "placeName": "말산메",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 시흥리 2656",
+    "longitude": 126.8854024,
+    "latitude": 33.48043643,
+    "placeUrl": "http://place.map.kakao.com/246107756"
+  },
+  {
+    "placeName": "한라산 삼형제샛오름남쪽1",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 색달동 산 1",
+    "longitude": 126.4476575,
+    "latitude": 33.35362882,
+    "placeUrl": "http://place.map.kakao.com/7926168"
+  },
+  {
+    "placeName": "붉은오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 광령리 산 183-2",
+    "longitude": 126.4589778,
+    "latitude": 33.37533619,
+    "placeUrl": "http://place.map.kakao.com/25259581"
+  },
+  {
+    "placeName": "살핀오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 광령리 산 183-2",
+    "longitude": 126.462169,
+    "latitude": 33.36788565,
+    "placeUrl": "http://place.map.kakao.com/25267011"
+  },
+  {
+    "placeName": "한라산 장오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 중문동 산 1",
+    "longitude": 126.4671038,
+    "latitude": 33.35632486,
+    "placeUrl": "http://place.map.kakao.com/8070344"
+  },
+  {
+    "placeName": "도두봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 도두일동 산 2",
+    "longitude": 126.4683721,
+    "latitude": 33.50790711,
+    "placeUrl": "http://place.map.kakao.com/7834621"
+  },
+  {
+    "placeName": "눈오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 해안동 166-17",
+    "longitude": 126.474797,
+    "latitude": 33.45946674,
+    "placeUrl": "http://place.map.kakao.com/8297242"
+  },
+  {
+    "placeName": "소수산봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 고성리 887",
+    "longitude": 126.9122164,
+    "latitude": 33.4367636,
+    "placeUrl": "http://place.map.kakao.com/25288503"
+  },
+  {
+    "placeName": "볼레오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 하원동 산 1-1",
+    "longitude": 126.484936,
+    "latitude": 33.35310292,
+    "placeUrl": "http://place.map.kakao.com/7901198"
+  },
+  {
+    "placeName": "활오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 강정동 3728",
+    "longitude": 126.4800387,
+    "latitude": 33.26363034,
+    "placeUrl": "http://place.map.kakao.com/8668530"
+  },
+  {
+    "placeName": "식산봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 오조리 313",
+    "longitude": 126.9199391,
+    "latitude": 33.46568079,
+    "placeUrl": "http://place.map.kakao.com/25297842"
+  },
+  {
+    "placeName": "삼무공원 배두리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 연동",
+    "longitude": 126.4917765,
+    "latitude": 33.49201112,
+    "placeUrl": "http://place.map.kakao.com/17807680"
+  },
+  {
+    "placeName": "광이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 연동 산 62",
+    "longitude": 126.4948812,
+    "latitude": 33.46805585,
+    "placeUrl": "http://place.map.kakao.com/25181898"
+  },
+  {
+    "placeName": "노루손이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 연동 산 137",
+    "longitude": 126.4965833,
+    "latitude": 33.42555151,
+    "placeUrl": "http://place.map.kakao.com/25197241"
+  },
+  {
+    "placeName": "골머리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 노형동 산 20",
+    "longitude": 126.496889,
+    "latitude": 33.40629992,
+    "placeUrl": "http://place.map.kakao.com/25179216"
+  },
+  {
+    "placeName": "어승생",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 해안동 산 220-12",
+    "longitude": 126.4892783,
+    "latitude": 33.39652248,
+    "placeUrl": "http://place.map.kakao.com/10574639"
+  },
+  {
+    "placeName": "민오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 오라이동 산 28-1",
+    "longitude": 126.5070916,
+    "latitude": 33.47572799,
+    "placeUrl": "http://place.map.kakao.com/8316764"
+  },
+  {
+    "placeName": "오백나한",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 하원동",
+    "longitude": 126.5020585,
+    "latitude": 33.35653848,
+    "placeUrl": "http://place.map.kakao.com/11274593"
+  },
+  {
+    "placeName": "한라산 민대가리동산(촛대봉)",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 광령리 산 183-6",
+    "longitude": 126.5152074,
+    "latitude": 33.37076024,
+    "placeUrl": "http://place.map.kakao.com/10838735"
+  },
+  {
+    "placeName": "열안지오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 오라이동 산 97",
+    "longitude": 126.5212032,
+    "latitude": 33.42587529,
+    "placeUrl": "http://place.map.kakao.com/8499806"
+  },
+  {
+    "placeName": "알방애오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 동홍동 산 1-1",
+    "longitude": 126.5299108,
+    "latitude": 33.34734149,
+    "placeUrl": "http://place.map.kakao.com/10580865"
+  },
+  {
+    "placeName": "망밭",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 서호동 73",
+    "longitude": 126.5241889,
+    "latitude": 33.24199404,
+    "placeUrl": "http://place.map.kakao.com/10349145"
+  },
+  {
+    "placeName": "소머리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 우도면 연평리 산 21-2",
+    "longitude": 126.9649333,
+    "latitude": 33.49163642,
+    "placeUrl": "http://place.map.kakao.com/246104758"
+  },
+  {
+    "placeName": "왕관릉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 오등동 산 182",
+    "longitude": 126.5330363,
+    "latitude": 33.37120005,
+    "placeUrl": "http://place.map.kakao.com/234968820"
+  },
+  {
+    "placeName": "섯거제",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 호근동 520-23",
+    "longitude": 126.5382902,
+    "latitude": 33.24745246,
+    "placeUrl": "http://place.map.kakao.com/7890597"
+  },
+  {
+    "placeName": "보름이",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 서홍동 968-1",
+    "longitude": 126.5446557,
+    "latitude": 33.25031966,
+    "placeUrl": "http://place.map.kakao.com/17789092"
+  },
+  {
+    "placeName": "흙붉은오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 아라일동 산 67-18",
+    "longitude": 126.5601359,
+    "latitude": 33.37969123,
+    "placeUrl": "http://place.map.kakao.com/8180841"
+  },
+  {
+    "placeName": "사라오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 신례리 산 2-1",
+    "longitude": 126.5708756,
+    "latitude": 33.37193619,
+    "placeUrl": "http://place.map.kakao.com/25262407"
+  },
+  {
+    "placeName": "입석오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 하례리 산 1-7",
+    "longitude": 126.5696331,
+    "latitude": 33.35670002,
+    "placeUrl": "http://place.map.kakao.com/25343687"
+  },
+  {
+    "placeName": "들레오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 월평동 665-1",
+    "longitude": 126.5804393,
+    "latitude": 33.45890545,
+    "placeUrl": "http://place.map.kakao.com/25222743"
+  },
+  {
+    "placeName": "봉아오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 1804",
+    "longitude": 126.5925188,
+    "latitude": 33.4942839,
+    "placeUrl": "http://place.map.kakao.com/11054575"
+  },
+  {
+    "placeName": "밧세미오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 산 3",
+    "longitude": 126.6030946,
+    "latitude": 33.4652579,
+    "placeUrl": "http://place.map.kakao.com/25244025"
+  },
+  {
+    "placeName": "물장오리(물장올)",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 산 78-38",
+    "longitude": 126.6067945,
+    "latitude": 33.40625511,
+    "placeUrl": "http://place.map.kakao.com/10424248"
+  },
+  {
+    "placeName": "고냉이술",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 165",
+    "longitude": 126.6163232,
+    "latitude": 33.4773882,
+    "placeUrl": "http://place.map.kakao.com/8654782"
+  },
+  {
+    "placeName": "족은칡오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 466-2",
+    "longitude": 126.6139228,
+    "latitude": 33.474254,
+    "placeUrl": "http://place.map.kakao.com/8064174"
+  },
+  {
+    "placeName": "셋개오리",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동",
+    "longitude": 126.6146526,
+    "latitude": 33.42989739,
+    "placeUrl": "http://place.map.kakao.com/17782147"
+  },
+  {
+    "placeName": "서걸세",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 하례리 산 130",
+    "longitude": 126.6178899,
+    "latitude": 33.28075823,
+    "placeUrl": "http://place.map.kakao.com/17781640"
+  },
+  {
+    "placeName": "족은노루손이",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 234-231",
+    "longitude": 126.6181279,
+    "latitude": 33.4588803,
+    "placeUrl": "http://place.map.kakao.com/10801926"
+  },
+  {
+    "placeName": "진물굼부리",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 산 78-1",
+    "longitude": 126.6203087,
+    "latitude": 33.44074673,
+    "placeUrl": "http://place.map.kakao.com/8078733"
+  },
+  {
+    "placeName": "절물오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 봉개동 산 78-1",
+    "longitude": 126.6267079,
+    "latitude": 33.43388059,
+    "placeUrl": "http://place.map.kakao.com/241119078"
+  },
+  {
+    "placeName": "넙거리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 산 137-1",
+    "longitude": 126.6257498,
+    "latitude": 33.39626617,
+    "placeUrl": "http://place.map.kakao.com/10186346"
+  },
+  {
+    "placeName": "한라산 섯궤펜이",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 한남리 산 2-1",
+    "longitude": 126.6284727,
+    "latitude": 33.39141917,
+    "placeUrl": "http://place.map.kakao.com/7940835"
+  },
+  {
+    "placeName": "물오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 산 137-4",
+    "longitude": 126.6232529,
+    "latitude": 33.38429963,
+    "placeUrl": "http://place.map.kakao.com/11289720"
+  },
+  {
+    "placeName": "동수악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 한남리 산 2-12",
+    "longitude": 126.62767,
+    "latitude": 33.36136414,
+    "placeUrl": "http://place.map.kakao.com/7840524"
+  },
+  {
+    "placeName": "흑악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 신례리 산 2-29",
+    "longitude": 126.6190255,
+    "latitude": 33.34892174,
+    "placeUrl": "http://place.map.kakao.com/8701378"
+  },
+  {
+    "placeName": "걸서악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 하례리 산 124",
+    "longitude": 126.6197949,
+    "latitude": 33.28231397,
+    "placeUrl": "http://place.map.kakao.com/8183004"
+  },
+  {
+    "placeName": "예촌망",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 하례리 95-2",
+    "longitude": 126.6304058,
+    "latitude": 33.25694975,
+    "placeUrl": "http://place.map.kakao.com/8015155"
+  },
+  {
+    "placeName": "샛궤펜이",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 137-1",
+    "longitude": 126.6301213,
+    "latitude": 33.39297848,
+    "placeUrl": "http://place.map.kakao.com/8426762"
+  },
+  {
+    "placeName": "돈두악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 대정읍 영락리 1487-1",
+    "longitude": 126.210242,
+    "latitude": 33.24989166,
+    "placeUrl": "http://place.map.kakao.com/7832617"
+  },
+  {
+    "placeName": "굽은오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한경면 조수리 3855",
+    "longitude": 126.2122755,
+    "latitude": 33.29913028,
+    "placeUrl": "http://place.map.kakao.com/8663815"
+  },
+  {
+    "placeName": "바농오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 산 108",
+    "longitude": 126.6538027,
+    "latitude": 33.45377197,
+    "placeUrl": "http://place.map.kakao.com/25240627"
+  },
+  {
+    "placeName": "거인악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 한남리 산 2-1",
+    "longitude": 126.6580196,
+    "latitude": 33.35347753,
+    "placeUrl": "http://place.map.kakao.com/10812380"
+  },
+  {
+    "placeName": "고이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 한남리 산 15-2",
+    "longitude": 126.6607874,
+    "latitude": 33.31902874,
+    "placeUrl": "http://place.map.kakao.com/8657685"
+  },
+  {
+    "placeName": "두강봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한경면 조수리 1277",
+    "longitude": 126.2233013,
+    "latitude": 33.3358857,
+    "placeUrl": "http://place.map.kakao.com/26455799"
+  },
+  {
+    "placeName": "늪서리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 산 95",
+    "addressDoro": "제주특별자치도 제주시 조천읍 남조로 2023",
+    "longitude": 126.6629475,
+    "latitude": 33.44178417,
+    "placeUrl": "http://place.map.kakao.com/8216051"
+  },
+  {
+    "placeName": "가친오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 가시리 산 158",
+    "longitude": 126.6642972,
+    "latitude": 33.39175026,
+    "placeUrl": "http://place.map.kakao.com/10359873"
+  },
+  {
+    "placeName": "새신오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한경면 청수리 3361",
+    "longitude": 126.2376749,
+    "latitude": 33.29776949,
+    "placeUrl": "http://place.map.kakao.com/11117069"
+  },
+  {
+    "placeName": "가시오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 대정읍 동일리 1706",
+    "longitude": 126.2431502,
+    "latitude": 33.24704705,
+    "placeUrl": "http://place.map.kakao.com/11269510"
+  },
+  {
+    "placeName": "마오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한경면 저지리 산 56",
+    "longitude": 126.2436561,
+    "latitude": 33.33805524,
+    "placeUrl": "http://place.map.kakao.com/10356367"
+  },
+  {
+    "placeName": "이계오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한경면 청수리 1854",
+    "longitude": 126.2451085,
+    "latitude": 33.33093875,
+    "placeUrl": "http://place.map.kakao.com/25342606"
+  },
+  {
+    "placeName": "대천이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 선흘리 산 154",
+    "longitude": 126.6850217,
+    "latitude": 33.45135866,
+    "placeUrl": "http://place.map.kakao.com/25206936"
+  },
+  {
+    "placeName": "족은방애오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 산 44",
+    "longitude": 126.6840582,
+    "latitude": 33.43915026,
+    "placeUrl": "http://place.map.kakao.com/8065788"
+  },
+  {
+    "placeName": "느지리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 상명리 산 5",
+    "longitude": 126.2615941,
+    "latitude": 33.36656797,
+    "placeUrl": "http://place.map.kakao.com/7862701"
+  },
+  {
+    "placeName": "까끄래기오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 128-1",
+    "longitude": 126.7031475,
+    "latitude": 33.43164464,
+    "placeUrl": "http://place.map.kakao.com/25190845"
+  },
+  {
+    "placeName": "운지악",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 남원읍 남원리 760-2",
+    "longitude": 126.7046943,
+    "latitude": 33.29948358,
+    "placeUrl": "http://place.map.kakao.com/10698145"
+  },
+  {
+    "placeName": "알밤오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 선흘리 산 59-2",
+    "longitude": 126.7126172,
+    "latitude": 33.49114406,
+    "placeUrl": "http://place.map.kakao.com/8490981"
+  },
+  {
+    "placeName": "웃밤",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 선흘리 산 84",
+    "longitude": 126.7154171,
+    "latitude": 33.47734699,
+    "placeUrl": "http://place.map.kakao.com/8035989"
+  },
+  {
+    "placeName": "부소오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 조천읍 교래리 산 2",
+    "longitude": 126.7177527,
+    "latitude": 33.4421915,
+    "placeUrl": "http://place.map.kakao.com/8363069"
+  },
+  {
+    "placeName": "소록산",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 가시리 산 87-24",
+    "longitude": 126.7227858,
+    "latitude": 33.40057815,
+    "placeUrl": "http://place.map.kakao.com/7958576"
+  },
+  {
+    "placeName": "가메옥",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 덕천리 1712",
+    "longitude": 126.7326612,
+    "latitude": 33.45319891,
+    "placeUrl": "http://place.map.kakao.com/8109737"
+  },
+  {
+    "placeName": "묘산봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 김녕리 2723",
+    "longitude": 126.7446789,
+    "latitude": 33.54366565,
+    "placeUrl": "http://place.map.kakao.com/10328462"
+  },
+  {
+    "placeName": "식은이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 덕천리 1450",
+    "longitude": 126.7461107,
+    "latitude": 33.47371167,
+    "placeUrl": "http://place.map.kakao.com/7912287"
+  },
+  {
+    "placeName": "번널오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 가시리 산 10-5",
+    "longitude": 126.7459055,
+    "latitude": 33.37431935,
+    "placeUrl": "http://place.map.kakao.com/7895084"
+  },
+  {
+    "placeName": "어도오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 3920-35",
+    "longitude": 126.3084666,
+    "latitude": 33.42055577,
+    "placeUrl": "http://place.map.kakao.com/25316350"
+  },
+  {
+    "placeName": "주체오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 덕천리 864",
+    "longitude": 126.7481281,
+    "latitude": 33.49221128,
+    "placeUrl": "http://place.map.kakao.com/11153172"
+  },
+  {
+    "placeName": "새끼오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 성읍리 3196",
+    "longitude": 126.7510302,
+    "latitude": 33.39660871,
+    "placeUrl": "http://place.map.kakao.com/8387235"
+  },
+  {
+    "placeName": "세미소오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 금악리 365-1",
+    "longitude": 126.3233219,
+    "latitude": 33.34995256,
+    "placeUrl": "http://place.map.kakao.com/237466193"
+  },
+  {
+    "placeName": "정물알오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 금악리 105-1",
+    "longitude": 126.3244205,
+    "latitude": 33.34054131,
+    "placeUrl": "http://place.map.kakao.com/8062305"
+  },
+  {
+    "placeName": "도너리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 한림읍 금악리 산 60",
+    "longitude": 126.3213432,
+    "latitude": 33.32569857,
+    "placeUrl": "http://place.map.kakao.com/8260448"
+  },
+  {
+    "placeName": "칡오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 155",
+    "longitude": 126.7620362,
+    "latitude": 33.44422194,
+    "placeUrl": "http://place.map.kakao.com/8586993"
+  },
+  {
+    "placeName": "가메오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 산 124",
+    "longitude": 126.3357021,
+    "latitude": 33.36732924,
+    "placeUrl": "http://place.map.kakao.com/10116894"
+  },
+  {
+    "placeName": "당오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 동광리 산 68-1",
+    "longitude": 126.3356559,
+    "latitude": 33.33409955,
+    "placeUrl": "http://place.map.kakao.com/7814463"
+  },
+  {
+    "placeName": "북오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 동광리 산 93",
+    "longitude": 126.3320722,
+    "latitude": 33.30628923,
+    "placeUrl": "http://place.map.kakao.com/10447654"
+  },
+  {
+    "placeName": "서수모루",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 67-2",
+    "longitude": 126.7686423,
+    "latitude": 33.46424924,
+    "placeUrl": "http://place.map.kakao.com/7937664"
+  },
+  {
+    "placeName": "아부오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 2263",
+    "longitude": 126.777215,
+    "latitude": 33.44858418,
+    "placeUrl": "http://place.map.kakao.com/10599658"
+  },
+  {
+    "placeName": "족은돌이미",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 2451",
+    "longitude": 126.7732103,
+    "latitude": 33.44011982,
+    "placeUrl": "http://place.map.kakao.com/8060120"
+  },
+  {
+    "placeName": "알오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 토산리 산 11",
+    "longitude": 126.7777084,
+    "latitude": 33.32789448,
+    "placeUrl": "http://place.map.kakao.com/11104042"
+  },
+  {
+    "placeName": "감낭오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 동광리 산 41",
+    "longitude": 126.3501802,
+    "latitude": 33.3249196,
+    "placeUrl": "http://place.map.kakao.com/8674728"
+  },
+  {
+    "placeName": "원물오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 동광리 산 41",
+    "longitude": 126.3448811,
+    "latitude": 33.32320577,
+    "placeUrl": "http://place.map.kakao.com/25334276"
+  },
+  {
+    "placeName": "월라봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 감산리 1144",
+    "longitude": 126.3495003,
+    "latitude": 33.24390526,
+    "placeUrl": "http://place.map.kakao.com/25335651"
+  },
+  {
+    "placeName": "안친오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 808",
+    "longitude": 126.7859587,
+    "latitude": 33.47846622,
+    "placeUrl": "http://place.map.kakao.com/8494697"
+  },
+  {
+    "placeName": "괭이모루",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 198",
+    "longitude": 126.7803343,
+    "latitude": 33.4621355,
+    "placeUrl": "http://place.map.kakao.com/8194279"
+  },
+  {
+    "placeName": "가세오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 토산리 산 5",
+    "longitude": 126.7813191,
+    "latitude": 33.33014143,
+    "placeUrl": "http://place.map.kakao.com/10118902"
+  },
+  {
+    "placeName": "새별오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 산 59-8",
+    "longitude": 126.3577307,
+    "latitude": 33.36627759,
+    "placeUrl": "http://place.map.kakao.com/25274725"
+  },
+  {
+    "placeName": "눈오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 소길리 산 12",
+    "longitude": 126.3702781,
+    "latitude": 33.43964981,
+    "placeUrl": "http://place.map.kakao.com/228295093"
+  },
+  {
+    "placeName": "괴수치",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 광평리 산 81",
+    "longitude": 126.3695856,
+    "latitude": 33.34017741,
+    "placeUrl": "http://place.map.kakao.com/8194672"
+  },
+  {
+    "placeName": "돔박이",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 광평리 산 89",
+    "longitude": 126.3643359,
+    "latitude": 33.33947175,
+    "placeUrl": "http://place.map.kakao.com/7834107"
+  },
+  {
+    "placeName": "신산오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 창천리 328",
+    "longitude": 126.3625421,
+    "latitude": 33.2628698,
+    "placeUrl": "http://place.map.kakao.com/8433711"
+  },
+  {
+    "placeName": "돝오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 송당리 산 3",
+    "longitude": 126.8015016,
+    "latitude": 33.4810833,
+    "placeUrl": "http://place.map.kakao.com/17788818"
+  },
+  {
+    "placeName": "아슴선이",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 하천리 2437",
+    "longitude": 126.8074152,
+    "latitude": 33.36894996,
+    "placeUrl": "http://place.map.kakao.com/17788462"
+  },
+  {
+    "placeName": "눈오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 장전리 1756",
+    "longitude": 126.3757112,
+    "latitude": 33.449831,
+    "placeUrl": "http://place.map.kakao.com/8220369"
+  },
+  {
+    "placeName": "괴오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 산 41",
+    "longitude": 126.3794884,
+    "latitude": 33.35849651,
+    "placeUrl": "http://place.map.kakao.com/10154919"
+  },
+  {
+    "placeName": "동물오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 산 41",
+    "longitude": 126.3797891,
+    "latitude": 33.35852506,
+    "placeUrl": "http://place.map.kakao.com/25215519"
+  },
+  {
+    "placeName": "궤미오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 산 41",
+    "longitude": 126.3738394,
+    "latitude": 33.35638364,
+    "placeUrl": "http://place.map.kakao.com/25187565"
+  },
+  {
+    "placeName": "다랑쉬오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 세화리 산 6",
+    "longitude": 126.8215359,
+    "latitude": 33.47768586,
+    "placeUrl": "http://place.map.kakao.com/25200772"
+  },
+  {
+    "placeName": "남산봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 신풍리 1657-1",
+    "longitude": 126.8125302,
+    "latitude": 33.38341257,
+    "placeUrl": "http://place.map.kakao.com/11300413"
+  },
+  {
+    "placeName": "본지오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 삼달리 2104-1",
+    "longitude": 126.8222608,
+    "latitude": 33.38710279,
+    "placeUrl": "http://place.map.kakao.com/25254223"
+  },
+  {
+    "placeName": "매오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 표선면 세화리 산 7",
+    "longitude": 126.8136193,
+    "latitude": 33.31768039,
+    "placeUrl": "http://place.map.kakao.com/25229887"
+  },
+  {
+    "placeName": "발이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 소길리 산 246",
+    "longitude": 126.3841203,
+    "latitude": 33.39888246,
+    "placeUrl": "http://place.map.kakao.com/8121453"
+  },
+  {
+    "placeName": "뒷굽으니오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 수산리 4504",
+    "longitude": 126.8267607,
+    "latitude": 33.42942741,
+    "placeUrl": "http://place.map.kakao.com/25221315"
+  },
+  {
+    "placeName": "족은바리메",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 상가리 산 124",
+    "longitude": 126.4002608,
+    "latitude": 33.37572816,
+    "placeUrl": "http://place.map.kakao.com/10798266"
+  },
+  {
+    "placeName": "빈네오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 52-16",
+    "longitude": 126.3941615,
+    "latitude": 33.34903089,
+    "placeUrl": "http://place.map.kakao.com/7920053"
+  },
+  {
+    "placeName": "이돋이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 광평리 산 12",
+    "longitude": 126.4028588,
+    "latitude": 33.3397504,
+    "placeUrl": "http://place.map.kakao.com/8041649"
+  },
+  {
+    "placeName": "남거니오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 수산리 3954",
+    "longitude": 126.8420223,
+    "latitude": 33.43536958,
+    "placeUrl": "http://place.map.kakao.com/25192869"
+  },
+  {
+    "placeName": "검은들먹오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 산 1",
+    "longitude": 126.406297,
+    "latitude": 33.36257483,
+    "placeUrl": "http://place.map.kakao.com/8679274"
+  },
+  {
+    "placeName": "어오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 안덕면 상천리 산 25",
+    "longitude": 126.4054468,
+    "latitude": 33.32421365,
+    "placeUrl": "http://place.map.kakao.com/11102796"
+  },
+  {
+    "placeName": "족은노꼬메오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 유수암리 산 138",
+    "longitude": 126.4171443,
+    "latitude": 33.3929165,
+    "placeUrl": "http://place.map.kakao.com/8214370"
+  },
+  {
+    "placeName": "한대오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 산 1",
+    "longitude": 126.4244501,
+    "latitude": 33.35633012,
+    "placeUrl": "http://place.map.kakao.com/25392324"
+  },
+  {
+    "placeName": "은다리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 구좌읍 종달리 산 15",
+    "longitude": 126.8557334,
+    "latitude": 33.46901905,
+    "placeUrl": "http://place.map.kakao.com/8037603"
+  },
+  {
+    "placeName": "산세미오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 고성리 산 127",
+    "longitude": 126.4341059,
+    "latitude": 33.40869729,
+    "placeUrl": "http://place.map.kakao.com/10440260"
+  },
+  {
+    "placeName": "대왕산",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 성산읍 수산리 1431",
+    "longitude": 126.8729163,
+    "latitude": 33.45612502,
+    "placeUrl": "http://place.map.kakao.com/25206398"
+  },
+  {
+    "placeName": "노로오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 상가리 산 124",
+    "longitude": 126.439303,
+    "latitude": 33.36626077,
+    "placeUrl": "http://place.map.kakao.com/25197040"
+  },
+  {
+    "placeName": "족은노로오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 봉성리 산 1",
+    "longitude": 126.4450277,
+    "latitude": 33.36917524,
+    "placeUrl": "http://place.map.kakao.com/8065787"
+  },
+  {
+    "placeName": "천아오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 광령리 산 182-1",
+    "longitude": 126.4499279,
+    "latitude": 33.39625511,
+    "placeUrl": "http://place.map.kakao.com/10769042"
+  },
+  {
+    "placeName": "삼형제오름(샛오름)",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 색달동 산 1-3",
+    "longitude": 126.4524915,
+    "latitude": 33.35816909,
+    "placeUrl": "http://place.map.kakao.com/8389202"
+  },
+  {
+    "placeName": "한라산 삼형제샛오름남쪽2",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 색달동 산 1",
+    "longitude": 126.4505916,
+    "latitude": 33.3544641,
+    "placeUrl": "http://place.map.kakao.com/7926152"
+  },
+  {
+    "placeName": "거린사슴",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 대포동 산 2-1",
+    "longitude": 126.4542363,
+    "latitude": 33.30960512,
+    "placeUrl": "http://place.map.kakao.com/8175569"
+  },
+  {
+    "placeName": "갯거리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 대포동 산 1-8",
+    "longitude": 126.4577474,
+    "latitude": 33.30998565,
+    "placeUrl": "http://place.map.kakao.com/25172867"
+  },
+  {
+    "placeName": "굿산망",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 하원동 1806",
+    "longitude": 126.4521419,
+    "latitude": 33.25814409,
+    "placeUrl": "http://place.map.kakao.com/8192529"
+  },
+  {
+    "placeName": "궤사름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 도순동 217",
+    "longitude": 126.4765469,
+    "latitude": 33.26083057,
+    "placeUrl": "http://place.map.kakao.com/234956975"
+  },
+  {
+    "placeName": "이스렁오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 광령리 산 183-6",
+    "longitude": 126.4841968,
+    "latitude": 33.36221423,
+    "placeUrl": "http://place.map.kakao.com/10753236"
+  },
+  {
+    "placeName": "한라산 어스렁오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 광령리 산 183",
+    "longitude": 126.4869024,
+    "latitude": 33.35926816,
+    "placeUrl": "http://place.map.kakao.com/10573955"
+  },
+  {
+    "placeName": "사제비동산",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 광령리 산 183-6",
+    "longitude": 126.4973852,
+    "latitude": 33.37480791,
+    "placeUrl": "http://place.map.kakao.com/7914532"
+  },
+  {
+    "placeName": "어점이오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 영남동 산 1",
+    "longitude": 126.4990392,
+    "latitude": 33.31080815,
+    "placeUrl": "http://place.map.kakao.com/10578462"
+  },
+  {
+    "placeName": "월산봉",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 강정동 1461",
+    "addressDoro": "제주특별자치도 서귀포시 중산간서로 95",
+    "longitude": 126.5002438,
+    "latitude": 33.25962522,
+    "placeUrl": "http://place.map.kakao.com/10677049"
+  },
+  {
+    "placeName": "가삿기오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 오라삼동 2845",
+    "longitude": 126.5038782,
+    "latitude": 33.48910023,
+    "placeUrl": "http://place.map.kakao.com/11043050"
+  },
+  {
+    "placeName": "걸쇠오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 연동 2488-254",
+    "longitude": 126.5036447,
+    "latitude": 33.41396642,
+    "placeUrl": "http://place.map.kakao.com/25174790"
+  },
+  {
+    "placeName": "족은두레왓",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 해안동 산 220-12",
+    "longitude": 126.5062838,
+    "latitude": 33.38645273,
+    "placeUrl": "http://place.map.kakao.com/10800349"
+  },
+  {
+    "placeName": "오드싱오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 오등동 1554",
+    "longitude": 126.5200001,
+    "latitude": 33.46999852,
+    "placeUrl": "http://place.map.kakao.com/8453959"
+  },
+  {
+    "placeName": "윗세오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 서호동 산 1-1",
+    "longitude": 126.5210199,
+    "latitude": 33.36073344,
+    "placeUrl": "http://place.map.kakao.com/25338262"
+  },
+  {
+    "placeName": "한라산 웃세붉은오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 서호동 산 183-1",
+    "longitude": 126.5207017,
+    "latitude": 33.36035534,
+    "placeUrl": "http://place.map.kakao.com/10686012"
+  },
+  {
+    "placeName": "개미목",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 오라이동 산 107-20",
+    "longitude": 126.5315363,
+    "latitude": 33.37799705,
+    "placeUrl": "http://place.map.kakao.com/226444204"
+  },
+  {
+    "placeName": "장구목오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 애월읍 광령리 산 183-6",
+    "longitude": 126.5251165,
+    "latitude": 33.36630852,
+    "placeUrl": "http://place.map.kakao.com/8057086"
+  },
+  {
+    "placeName": "각시바위",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 호근동 2112",
+    "longitude": 126.5261525,
+    "latitude": 33.27677459,
+    "placeUrl": "http://place.map.kakao.com/8675561"
+  },
+  {
+    "placeName": "쇠머리오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 우도면 연평리 산 23",
+    "longitude": 126.9635913,
+    "latitude": 33.49209675,
+    "placeUrl": "http://place.map.kakao.com/8389783"
+  },
+  {
+    "placeName": "들위오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 오등동 산 154-5",
+    "longitude": 126.5402447,
+    "latitude": 33.4272808,
+    "placeUrl": "http://place.map.kakao.com/8341417"
+  },
+  {
+    "placeName": "능화오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 오라이동 산 107-20",
+    "longitude": 126.5341367,
+    "latitude": 33.40020805,
+    "placeUrl": "http://place.map.kakao.com/10276903"
+  },
+  {
+    "placeName": "알오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 제주시 화북일동 4504",
+    "longitude": 126.5495061,
+    "latitude": 33.51912804,
+    "placeUrl": "http://place.map.kakao.com/8402972"
+  },
+  {
+    "placeName": "쌀오름",
+    "category": "여행 > 관광,명소 > 오름",
+    "addressJibun": "제주특별자치도 서귀포시 동홍동 2195",
+    "longitude": 126.5544916,
+    "latitude": 33.30060832,
+    "placeUrl": "http://place.map.kakao.com/25302677"
+  }
+]
