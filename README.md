@@ -1,3 +1,5 @@
+# 오름 지도 URL
+https://oreummcp.streamlit.app/
 # 오름 추천 MCP 서버 (0단계 골격)
 
 제주 오름 추천을 위한 MCP 서버. tool 1개(`recommend_oreum`)를 노출하며, 사용자
