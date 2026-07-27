@@ -3,9 +3,9 @@
 제주 오름 지도 대시보드 (Streamlit).
 
 오름.db(server.py와 동일 DB)를 지도에 뿌리고, 마커 클릭 시 server.py의
-KASI(천문)/KMA(단기예보) 조회 로직을 그대로 재사용해 실시간 날씨·일출몰
-정보를 붙인다. API 호출 로직은 재구현하지 않고 server.py를 모듈로 import해
-그대로 쓴다.
+KASI(천문)/KMA(단기예보/특보현황) 조회 로직을 그대로 재사용해 실시간 날씨·
+일출몰·입산 관련 특보 정보를 붙인다. API 호출 로직은 재구현하지 않고
+server.py를 모듈로 import해 그대로 쓴다.
 """
 import sqlite3
 from datetime import datetime
@@ -29,6 +29,14 @@ COORD_EPS = 1e-4
 LEGEND_COLOR = {"green": "green", "blue": "blue", "orange": "orange", "red": "red",
                 "darkred": "red", "purple": "violet"}
 
+# 팝업(HTML)에서 gates.safety.status 별로 표시할 문구/색상 (server.py의 status 정의 그대로:
+# clear/warning/unknown — "blocked"는 없음, 특보구역 단위 근사이므로 warning이어도 안내만 함).
+SAFETY_HTML = {
+    "clear": lambda detail: f"<b>특보</b>: <span style='color:#1a7f37'>{detail}</span>",
+    "warning": lambda detail: f"<b>특보</b>: <span style='color:#b00020'>{detail}</span>",
+    "unknown": lambda detail: f"<b>특보</b>: <span style='color:#666'>{detail}</span>",
+}
+
 
 @st.cache_data
 def load_data():
@@ -37,18 +45,33 @@ def load_data():
     return df.dropna(subset=[api.COL_LAT, api.COL_LON]).reset_index(drop=True)
 
 
+@st.cache_data(ttl=600)
+def load_active_warnings():
+    """특보현황을 앱 전체에서 1회(10분 캐시)만 조회한다. 실패해도 위험이 아니라
+    "정보 없음"으로 취급한다 (server.py와 동일 원칙)."""
+    try:
+        warnings, status_code = api.fetch_active_safety_warnings()
+        return warnings, status_code, None
+    except api.SafetyLookupError as e:
+        return None, None, str(e)
+
+
 def fmt(value, suffix=""):
     if value is None or value == "" or (isinstance(value, float) and pd.isna(value)):
         return "정보없음"
     return f"{value}{suffix}"
 
 
-def fetch_live_info(row):
-    """server.py의 KASI/KMA 호출을 그대로 재사용해 오름 하나의 실시간 정보를 가져온다."""
+def fetch_live_info(row, active_warnings):
+    """server.py의 KASI/KMA/특보 호출을 그대로 재사용해 오름 하나의 실시간 정보를 가져온다."""
     lat, lon = row[api.COL_LAT], row[api.COL_LON]
     now = datetime.now()
     date_str = now.strftime("%Y%m%d")
-    live = {"astro": None, "weather": None, "error": None}
+    live = {"astro": None, "weather": None, "safety": None, "error": None}
+
+    warn_reg_id = row.get("warn_reg_id") if not pd.isna(row.get("warn_reg_id")) else None
+    warn_reg_up = row.get("warn_reg_up") if not pd.isna(row.get("warn_reg_up")) else None
+    live["safety"] = api.match_safety_gate(warn_reg_id, warn_reg_up, active_warnings)
 
     try:
         live["astro"] = api.kasi_times(lat, lon, date_str)
@@ -93,6 +116,8 @@ def build_popup_html(row, live):
                 f"<p><b>{w['target_time']} 날씨</b>: {fmt(w['sky'])} · {fmt(w['tmp_c'], '℃')} · "
                 f"강수확률 {fmt(w['pop_pct'], '%')} · {fmt(w['wind_dir'])} {fmt(w['wsd_ms'], 'm/s')}</p>"
             )
+        if live.get("safety"):
+            parts.append(f"<p>{SAFETY_HTML[live['safety']['status']](live['safety']['detail'])}</p>")
         if live.get("error"):
             parts.append(f"<p style='color:#b00020'><b>실시간 정보 오류</b>: {live['error']}</p>")
 
@@ -109,6 +134,7 @@ def find_row_by_latlng(df, lat, lng):
 
 
 df = load_data()
+active_warnings, safety_status_code, safety_error = load_active_warnings()
 
 if "weather_cache" not in st.session_state:
     st.session_state.weather_cache = {}
@@ -128,6 +154,17 @@ if query:
     st.sidebar.write(f"검색 결과: {len(matched)}건")
     if len(matched) == 0:
         st.sidebar.caption("일치하는 오름이 없습니다.")
+
+st.sidebar.divider()
+st.sidebar.caption("입산 관련 특보 현황 (KMA)")
+if safety_error:
+    st.sidebar.warning(f"특보 조회 실패 - 정보 없음 ({safety_error})")
+elif not active_warnings:
+    st.sidebar.success("현재 발효 중인 입산 관련 특보 없음")
+else:
+    st.sidebar.error(f"현재 입산 관련 특보 {len(active_warnings)}건 발효 중")
+    for w in active_warnings:
+        st.sidebar.caption(f"- {w['reg_ko']} {w['wrn']}{w['lvl']}")
 
 st.sidebar.divider()
 st.sidebar.caption("마커 색상 (난이도)")
@@ -184,7 +221,7 @@ if clicked:
         if hit is not None:
             st.session_state.selected_rowid = hit["rowid"]
             with st.spinner(f"{hit[api.COL_NAME]} 실시간 정보 조회 중..."):
-                st.session_state.weather_cache[hit["rowid"]] = fetch_live_info(hit)
+                st.session_state.weather_cache[hit["rowid"]] = fetch_live_info(hit, active_warnings)
             st.rerun()
 
 if st.session_state.selected_rowid is not None:
@@ -214,6 +251,15 @@ if st.session_state.selected_rowid is not None:
                 w2.metric("기온", fmt(weather["tmp_c"], "℃"))
                 w3.metric("강수확률", fmt(weather["pop_pct"], "%"))
                 w4.metric("바람", f"{fmt(weather['wind_dir'])} {fmt(weather['wsd_ms'], 'm/s')}")
+
+            safety = live.get("safety")
+            if safety:
+                if safety["status"] == "warning":
+                    st.error(f"⚠️ {safety['detail']}")
+                elif safety["status"] == "clear":
+                    st.success(f"✅ {safety['detail']}")
+                else:
+                    st.info(f"ℹ️ {safety['detail']}")
 
             if live.get("error"):
                 st.warning(live["error"])
