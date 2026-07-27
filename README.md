@@ -1,22 +1,32 @@
 # 오름 지도 URL
 https://oreummcp.streamlit.app/
-# 오름 추천 MCP 서버 (0단계 골격)
+# 오름 추천 MCP 서버
 
 제주 오름 추천을 위한 MCP 서버. tool 1개(`recommend_oreum`)를 노출하며, 사용자
 조건(지명/동반자/목적/시각/난이도)으로 `오름.db`를 필터·랭킹하고 후보별로 KASI
-(천문) · KMA(단기예보) 데이터를 붙여 JSON으로 반환한다.
+(천문) · KMA(단기예보/특보) 데이터를 붙여 JSON으로 반환한다.
 
-이 단계는 end-to-end 관통이 목적이다. 아래는 **이번 단계에서 하지 않는 것**:
+계산(난이도 상한 결정, 목표시각 스냅, 랭킹, 왕복시간 게이트, 특보 안전 게이트)은
+전부 서버가 결정론적으로 수행하며 LLM에 위임하지 않는다.
+
+- **왕복시간 게이트(`gates.round_trip`)** 구현됨: difficulty(비고 등급) 상단값 ×
+  동반자 페이스 배수로 근사한 왕복 소요시간과, 목표시각(일몰/일출/지정시각)까지
+  남은 시간을 비교해 `pass`/`tight`/`fail`/`night`/`n/a`/`unknown`을 판정한다.
+  절대 분 단위 정밀 예측이 아니라 "목표시각을 못 맞출 후보를 보수적으로 걸러내기
+  위한" 근사이며, `fail`이어도 후보를 목록에서 제외하지 않고 정렬만 뒤로 민다.
+- **안전 특보 게이트(`gates.safety`)** 구현됨: KMA 특보현황(`wrn_now_data_new`)을
+  요청당 1회 조회해 입산/탐방 위험과 관련된 특보(강풍/풍랑/호우/대설/태풍/폭풍해일/
+  한파)만 걸러 오름별 특보구역코드와 대조한다. `clear`/`warning`/`unknown` 중
+  하나이며, 특보구역 단위 근사이므로 `warning`이어도 후보를 제외하지 않는다.
+  API 호출 실패는 위험이 아니라 "정보 없음"(`unknown`)으로 처리한다.
+
+아래는 **아직 하지 않는 것**:
 
 - 혼잡도(C축) 관련 로직 없음.
-- 왕복 소요시간의 절대 분(分) 예측 없음 — `round_trip_hint`는 DB에 미리 계산된
-  참고 범위 문자열을 그대로 노출할 뿐이다.
-- 안전 특보 연동 — `gates.safety`는 항상 `{"status":"unknown", "reason":"특보 연동 전(스텁)"}`.
-- 왕복시간 컷오프 게이트(일몰 전 하산 가능 여부 판정) — 코드에 `TODO(next)` 주석만
-  있고 실제 판정은 없음.
 - 사용자 현재 위치 기반 실거리 계산 — `distance_note`는 이유를 설명하는 고정
   문자열 스텁이다 (tool 입력에 사용자 좌표가 없음, `location`은 지명 문자열 필터일 뿐).
-- 가중치 기반 정렬 — 지금은 `(난이도 오름차순, 하늘상태 좋은 순)` 단순 정렬뿐.
+- 가중치 기반 정렬 — 지금은 `(안전 게이트, 왕복 게이트, 난이도 오름차순, 하늘상태
+  좋은 순)` 다단계 정렬뿐, 사용자 선호 가중합은 없다.
 
 ## 성능: 실시간 조회 상한 (`ENRICH_SAFETY_CAP`)
 
@@ -107,7 +117,13 @@ Desktop이 별도 환경으로 프로세스를 띄우는 경우를 대비해 명
       "astro": { sunrise, sunset, moonrise, moonset, ... } | null,
       "weather_at_target": { target_time, sky, pty, tmp_c, pop_pct, wsd_ms, wind_dir, ... } | null,
       "verdict": "<str>" | null,
-      "gates": { "safety": { "status": "unknown", "reason": "특보 연동 전(스텁)" } },
+      "gates": {
+        "safety": { "status": "clear" | "warning" | "unknown", "detail": "<str>", "warnings": [...] },
+        "round_trip": {
+          "status": "pass" | "tight" | "fail" | "night" | "n/a" | "unknown",
+          "est_min", "remaining_min", "margin_min", "target_time", "target_basis", "note"
+        }
+      },
       "confidence": {
         "astro": "ok" | "failed" | "no_coords",
         "weather": "ok" | "failed" | "no_grid",
@@ -152,7 +168,12 @@ Desktop이 별도 환경으로 프로세스를 띄우는 경우를 대비해 명
         "wsd_ms": 3.2, "vec_deg": 270.0, "wind_dir": "서"
       },
       "verdict": "노을·조망 양호",
-      "gates": {"safety": {"status": "unknown", "reason": "특보 연동 전(스텁)"}},
+      "gates": {
+        "safety": {"status": "clear", "detail": "발효 중인 입산 관련 특보 없음", "warnings": []},
+        "round_trip": {"status": "pass", "est_min": 54, "remaining_min": 219, "margin_min": 165,
+                        "target_time": "2026-07-26T19:41", "target_basis": "sunset_today",
+                        "note": "어르신 동반 페이스 기준, 비고 등급 근사"}
+      },
       "confidence": {"astro": "ok", "weather": "ok", "grid_source": "db",
                      "cache_hit": {"astro": false, "weather": false}}
     }
@@ -164,10 +185,17 @@ Desktop이 별도 환경으로 프로세스를 띄우는 경우를 대비해 명
 (`companion="elderly"`로 난이도≤2 필터가 걸려 "성산" 지역 후보 3개 중 조건에 맞는
 1개만 반환된 상황을 가정한 예시.)
 
+## 테스트
+
+```
+pytest test/
+```
+
+- `test/test_round_trip_gate.py`: 왕복시간 게이트(`resolve_target_and_gate` 등) 검증.
+- `test/test_safety_gate.py`: 안전 특보 게이트(파싱/필터/매칭) 검증.
+- `test/test_kasi.py`, `test/Test_combined.py`: KASI/KMA 호출 로직 원본 검증(이식 전 기준).
+
 ## 다음 단계 TODO (이번 스코프 아님)
 
-- 가중치 기반 랭킹(바람/강수확률/사용자 선호 가중합 등)으로 단순 정렬 교체.
-- 왕복시간 컷오프 게이트: `(sunset - now)` 가용시간과 `round_trip_hint` 등급상단값
-  배수를 비교해 pass/warn/block 판정.
+- 가중치 기반 랭킹(바람/강수확률/사용자 선호 가중합 등)으로 다단계 정렬 교체.
 - 사용자 좌표 입력 파라미터 추가 후 `distance_note`를 실제 거리 계산으로 교체.
-- 안전 특보(기상특보 등) 연동 후 `gates.safety` 스텁 교체.
