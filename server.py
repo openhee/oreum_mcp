@@ -5,9 +5,11 @@
 tool 1개(recommend_oreum) 노출: 사용자 조건으로 오름.db를 필터·랭킹하고,
 후보별로 KASI(천문)/KMA(단기예보) 값을 붙여 JSON으로 반환한다.
 
-계산(난이도 상한 결정, 목표시각 스냅, 랭킹)은 전부 이 파일이 결정론적으로 수행하며
-LLM에 위임하지 않는다. 안전 특보 연동, 왕복시간 컷오프 게이트, 사용자 좌표 기반
-실거리 계산, 가중치 랭킹은 다음 단계 TODO로 남겨둔다(코드 내 주석 참고).
+계산(난이도 상한 결정, 목표시각 스냅, 랭킹, 왕복시간 게이트)은 전부 이 파일이 결정론적으로
+수행하며 LLM에 위임하지 않는다. 왕복시간 게이트는 정밀 예측이 아니라 difficulty(비고 등급)의
+상단값(느린 쪽)으로 근사한, 일몰/일출을 못 맞추는 오름을 보수적으로 걸러내기 위한 판정이다
+(fail 이어도 후보에서 제외하지 않고 경고만 남긴다). 안전 특보 연동, 사용자 좌표 기반 실거리
+계산, 가중치 랭킹은 다음 단계 TODO로 남겨둔다(코드 내 주석 참고).
 
 KASI/KMA 호출 로직은 test/test_kasi.py, test/Test_combined.py 에서 검증된 것을
 그대로 이식했다.
@@ -49,6 +51,19 @@ SKY_RANK_ORDER = {"1": 0, "3": 1, "4": 2}
 
 # child/elderly -> 난이도 상한, solo/None(또는 미지 값) -> None(무제한)
 COMPANION_MAX_DIFFICULTY = {"child": 2, "elderly": 2, "solo": None}
+
+# ── 왕복시간 게이트 상수 ──
+# 이 게이트는 "정밀 왕복 예측"이 아니라 일몰/일출을 못 맞추는 오름을 보수적으로
+# 걸러내기 위한 근사치다. 웹 실측 왕복시간은 오름당 편차 ±2배라 DB의 difficulty
+# (비고 등급)만으로 근사하며, 등급 상단값(느린 쪽)을 쓴다. 절대분을 정밀값처럼
+# UI에 내세우지 말 것 — 항상 note에 근사임을 남긴다.
+DIFFICULTY_ROUND_TRIP_MAX_MIN = {1: 30, 2: 45, 3: 70, 4: 100, 5: 150}
+PACE_MULTIPLIER = {"child": 1.8, "elderly": 1.8, "solo": 0.8}
+DEFAULT_PACE_MULTIPLIER = 1.0
+ROUND_TRIP_PASS_MARGIN_MIN = 30  # margin >= 이 값 -> pass, 0~미만 -> tight, 미만 -> fail
+SAFE_NIGHT_MAX_DIFFICULTY = 2  # 야간 특례에서 "안전한 오름"으로 안내하는 난이도 상한(note용, 필터 아님)
+
+ROUND_TRIP_STATUS_PRIORITY = {"pass": 0, "tight": 1, "night": 2, "fail": 3, "unknown": 4}
 
 # location/난이도 필터가 헐거워 후보가 많이 남을 때, 전부에 대해 순차로 KASI+KMA를
 # 호출하면(오름당 API 2회 왕복) 너무 느리다. 난이도(DB값, API 호출 없음) 기준으로
@@ -157,15 +172,19 @@ def sky_rank(weather_at_target):
 
 
 def rank_key(item):
+    """정렬: 왕복 게이트 상태(pass<tight<night<fail<unknown) 우선, 그다음 기존 기준.
+
+    night 상태는 게이트가 무의미하므로 그룹 내에서는 기존 2번째 키(difficulty 오름차순)가
+    그대로 "안전한(쉬운) 오름 우선" 가점 역할을 한다 — 별도 키 불필요.
+    """
     diff = item["difficulty"] if item["difficulty"] is not None else float("inf")
-    return (diff, sky_rank(item["weather_at_target"]))
+    rt_status = (item.get("gates") or {}).get("round_trip") or {}
+    rt_priority = ROUND_TRIP_STATUS_PRIORITY.get(rt_status.get("status"), 5)
+    return (rt_priority, diff, sky_rank(item["weather_at_target"]))
 
 
 def make_safety_gate():
     return {"status": "unknown", "reason": "특보 연동 전(스텁)"}
-    # TODO(next): 왕복시간 게이트 — (astro.sunset - now) 가용시간 vs round_trip_hint
-    # 등급상단값 배수 비교해 pass/warn/block 판정 추가. 이번 단계는 round_trip_hint
-    # 텍스트 노출만 하고 실제 게이팅 로직은 미구현.
 
 
 # ───────────────────────── API 호출 ─────────────────────────
@@ -266,6 +285,124 @@ def select_verdict_fn(purpose):
     return verdict_sunset_glow if purpose in ("sunset", "sunrise") else verdict_view
 
 
+# ───────────────────────── 왕복시간 게이트 ─────────────────────────
+
+def companion_pace_label(companion):
+    return {"child": "아이 동반", "elderly": "어르신 동반", "solo": "단독"}.get(companion, "일반")
+
+
+def estimate_round_trip_min(difficulty, companion):
+    """difficulty(1~5) 등급 상단값 × 동반자 페이스 배수 → 왕복 예상분(보수적 근사)."""
+    if difficulty is None:
+        return None
+    cap_min = DIFFICULTY_ROUND_TRIP_MAX_MIN.get(difficulty)
+    if cap_min is None:
+        return None
+    pace = PACE_MULTIPLIER.get(companion, DEFAULT_PACE_MULTIPLIER)
+    return round(cap_min * pace)
+
+
+def round_trip_status(margin_min):
+    if margin_min >= ROUND_TRIP_PASS_MARGIN_MIN:
+        return "pass"
+    if margin_min >= 0:
+        return "tight"
+    return "fail"
+
+
+def resolve_target_and_gate(name, purpose, requested_dt, astro_today, target_date_str,
+                             lat, lon, difficulty, companion, kasi_cache, notes,
+                             kasi_fetch=kasi_times):
+    """목표시각(target_moment)과 왕복 게이트(gates.round_trip)를 함께 정한다.
+
+    반환된 target_moment 은 기상(KMA) 슬롯 매칭에도 그대로 재사용해, 게이트가 본 시각과
+    verdict/weather_at_target 이 본 시각이 어긋나지 않게 한다.
+
+    purpose 별 목표시각 정책:
+      - sunset/sunrise: 오늘 KASI 값이 기본. requested_dt(=현재시각 취급)가 이미 그 시각을
+        지났으면 내일 날짜로 KASI 를 재조회해 내일 값을 목표로 삼는다(오늘 값 재사용 금지).
+      - view/None: requested_dt 자체가 목표시각. 다만 그 시각이 오늘 일몰~일출 사이(야간)이면
+        시간 게이트가 무의미하므로 status="night" 로 대체한다(안전한 오름 우선 안내는 note로만).
+    """
+    pace_label = companion_pace_label(companion)
+    base_note = f"{pace_label} 페이스 기준, 비고 등급 근사"
+    est_min = estimate_round_trip_min(difficulty, companion)
+
+    target_moment = None
+    target_basis = None
+    night = False
+
+    if purpose in ("sunset", "sunrise"):
+        if astro_today is None:
+            notes.append(f"{name}: 천문 데이터 없어 {purpose} 목표시각 산정 불가 → 왕복 게이트 미산정")
+        else:
+            t_today = hhmm_str_to_datetime(target_date_str, astro_today[purpose])
+            if t_today is None:
+                notes.append(f"{name}: {purpose} 시각 정보 없음 → 왕복 게이트 미산정")
+            elif requested_dt > t_today:
+                purpose_kr = "일몰" if purpose == "sunset" else "일출"
+                tomorrow_date_str = (requested_dt + timedelta(days=1)).strftime("%Y%m%d")
+                astro_tomorrow, hit = cached_call(
+                    kasi_cache, (lat, lon, tomorrow_date_str),
+                    lambda: kasi_fetch(lat, lon, tomorrow_date_str))
+                if isinstance(astro_tomorrow, Exception):
+                    notes.append(f"{name}: 내일 천문 재조회 실패 - {astro_tomorrow} → 왕복 게이트 미산정")
+                else:
+                    t_tomorrow = hhmm_str_to_datetime(tomorrow_date_str, astro_tomorrow[purpose])
+                    if t_tomorrow is None:
+                        notes.append(f"{name}: 내일 {purpose_kr} 시각 정보 없음 → 왕복 게이트 미산정")
+                    else:
+                        target_moment = t_tomorrow
+                        target_basis = f"{purpose}_tomorrow"
+                        base_note += f" · 오늘 {purpose_kr} 지나 내일 기준"
+            else:
+                target_moment = t_today
+                target_basis = f"{purpose}_today"
+    else:
+        target_moment = requested_dt
+        target_basis = "user_time"
+        if astro_today is None:
+            notes.append(f"{name}: 천문 데이터 없어 야간 여부 판정 불가")
+        else:
+            sunset_today = hhmm_str_to_datetime(target_date_str, astro_today["sunset"])
+            sunrise_today = hhmm_str_to_datetime(target_date_str, astro_today["sunrise"])
+            if sunset_today and sunrise_today and (target_moment > sunset_today or target_moment < sunrise_today):
+                night = True
+                target_basis = "night"
+                base_note += f" · 야간 시간대 — 안전한 오름 우선(비고 등급 {SAFE_NIGHT_MAX_DIFFICULTY} 이하 권장)"
+
+    if target_moment is None:
+        gate = {
+            "status": "unknown", "est_min": est_min, "remaining_min": None, "margin_min": None,
+            "target_time": None, "target_basis": None, "note": base_note + " · 목표시각 산정 불가",
+        }
+        return None, gate
+
+    remaining_min = round((target_moment - requested_dt).total_seconds() / 60)
+
+    if night:
+        status = "night"
+        margin_min = None if est_min is None else remaining_min - est_min
+    elif est_min is None:
+        status = "unknown"
+        margin_min = None
+        base_note += " · 난이도 정보 없어 소요시간 추정 불가"
+    else:
+        margin_min = remaining_min - est_min
+        status = round_trip_status(margin_min)
+
+    gate = {
+        "status": status,
+        "est_min": est_min,
+        "remaining_min": remaining_min,
+        "margin_min": margin_min,
+        "target_time": target_moment.strftime("%Y-%m-%dT%H:%M"),
+        "target_basis": target_basis,
+        "note": base_note,
+    }
+    return target_moment, gate
+
+
 # ───────────────────────── DB 접근 ─────────────────────────
 
 def fetch_candidates(location, max_difficulty):
@@ -302,22 +439,24 @@ def cached_call(cache, key, fn):
 
 # ───────────────────────── 후보별 빌드 ─────────────────────────
 
-def build_candidate(row, purpose, requested_dt, base_date, base_time,
+def build_candidate(row, purpose, requested_dt, base_date, base_time, companion,
                      kasi_cache, kma_cache, notes):
     name = row[COL_NAME]
     lat, lon = row[COL_LAT], row[COL_LON]
     db_nx, db_ny = row[COL_NX], row[COL_NY]
+    difficulty = row["difficulty"]
 
     confidence = {"astro": "no_coords", "weather": "no_grid",
                   "grid_source": None, "cache_hit": {"astro": False, "weather": False}}
     astro = None
     weather_norm = None
     verdict_text = None
+    round_trip_gate = None
 
     try:
         target_date_str = requested_dt.strftime("%Y%m%d")
 
-        # ---- 천문 ----
+        # ---- 천문(오늘) ----
         if lat is not None and lon is not None:
             astro_result, hit = cached_call(
                 kasi_cache, (lat, lon, target_date_str),
@@ -330,17 +469,11 @@ def build_candidate(row, purpose, requested_dt, base_date, base_time,
                 astro = astro_result
                 confidence["astro"] = "ok"
 
-        # ---- 목표시각 결정 ----
-        target_moment = None
-        if purpose in ("sunset", "sunrise"):
-            if astro is not None:
-                target_moment = hhmm_str_to_datetime(target_date_str, astro[purpose])
-                if target_moment is None:
-                    notes.append(f"{name}: {purpose} 시각 정보 없음 → 기상 매칭 생략")
-            else:
-                notes.append(f"{name}: 천문 데이터 없어 {purpose} 시각 기준 기상 매칭 생략")
-        else:
-            target_moment = requested_dt
+        # ---- 목표시각 결정 + 왕복 게이트 ----
+        # (내일로 넘어갈 수 있어 여기서 기상 슬롯 매칭에 쓸 target_moment 도 함께 정한다)
+        target_moment, round_trip_gate = resolve_target_and_gate(
+            name, purpose, requested_dt, astro, target_date_str,
+            lat, lon, difficulty, companion, kasi_cache, notes)
 
         # ---- 격자 결정 ----
         nx = ny = None
@@ -374,6 +507,13 @@ def build_candidate(row, purpose, requested_dt, base_date, base_time,
     except Exception as e:  # 안전망: 후보 하나의 예상 못한 오류가 전체 호출을 죽이지 않도록
         notes.append(f"{name}: 처리 중 알 수 없는 오류 - {e}")
 
+    if round_trip_gate is None:
+        round_trip_gate = {
+            "status": "unknown", "est_min": estimate_round_trip_min(difficulty, companion),
+            "remaining_min": None, "margin_min": None, "target_time": None,
+            "target_basis": None, "note": "처리 중 오류로 왕복 게이트 미산정",
+        }
+
     return {
         "name": name, "lat": lat, "lng": lon,
         "kakao_url": row["카카오맵_url"],
@@ -384,7 +524,7 @@ def build_candidate(row, purpose, requested_dt, base_date, base_time,
         "astro": astro,
         "weather_at_target": weather_norm,
         "verdict": verdict_text,
-        "gates": {"safety": make_safety_gate()},
+        "gates": {"safety": make_safety_gate(), "round_trip": round_trip_gate},
         "confidence": confidence,
     }
 
@@ -419,6 +559,10 @@ def recommend_oreum(
     Returns:
         dict: query_echo(입력/해석값), count(반환된 결과 수), results[](오름별 상세),
         notes[](필터 사유, 부분 실패, 최종 반환 요약 등 사람이 읽을 메모).
+        results[].gates.round_trip 은 difficulty 등급 근사 기반 왕복시간 게이트
+        (status: pass/tight/fail/night/unknown)다 — 정밀 예측이 아니라 목표시각(일몰/일출/
+        지정시각)을 못 맞출 후보를 보수적으로 걸러내기 위한 값이며, fail 이어도 후보는
+        제외하지 않고 목록에 남는다(정렬만 뒤로 밀림).
     """
     notes: list[str] = []
     now = datetime.now()
@@ -462,7 +606,7 @@ def recommend_oreum(
     kma_cache: dict = {}
 
     enriched = [
-        build_candidate(row, purpose, requested_dt, base_date, base_time,
+        build_candidate(row, purpose, requested_dt, base_date, base_time, companion,
                          kasi_cache, kma_cache, notes)
         for row in rows_to_enrich
     ]
