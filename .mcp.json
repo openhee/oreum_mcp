@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "oreum-recommend": {
+      "type": "stdio",
+      "command": "python",
+      "args": [
+        "server.py"
+      ],
+      "env": {}
+    }
+  }
+}
