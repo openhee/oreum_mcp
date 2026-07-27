@@ -1,3 +1,7 @@
 mcp
 python-dotenv
 requests
+streamlit
+folium
+streamlit-folium
+pandas
