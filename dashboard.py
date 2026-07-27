@@ -8,7 +8,7 @@ KASI(천문)/KMA(단기예보/특보현황) 조회 로직을 그대로 재사용
 server.py를 모듈로 import해 그대로 쓴다.
 """
 import sqlite3
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import folium
 import pandas as pd
@@ -85,7 +85,15 @@ def fetch_live_info(row, active_warnings):
     try:
         slots = api.kma_slots(int(nx), int(ny), base_date, base_time)
         snapped = api.snap_to_hour(now)
-        raw = slots.get((snapped.strftime("%Y%m%d"), snapped.strftime("%H00")))
+        target_key = (snapped.strftime("%Y%m%d"), snapped.strftime("%H00"))
+        raw = slots.get(target_key)
+        if raw is None:
+            # 방금 발표된 슬롯(latest_base의 10분 여유)은 KMA 쪽 게시 지연으로 아직
+            # 데이터가 안 실렸을 수 있다 — 이미 확정 게시됐을 직전 발표(3시간 전)로 1회 재시도.
+            prev_base_date, prev_base_time = api.latest_base(now - timedelta(hours=3))
+            if (prev_base_date, prev_base_time) != (base_date, base_time):
+                prev_slots = api.kma_slots(int(nx), int(ny), prev_base_date, prev_base_time)
+                raw = prev_slots.get(target_key)
         if raw is not None:
             live["weather"] = api.normalize_weather(raw, snapped)
         else:
@@ -263,5 +271,9 @@ if st.session_state.selected_rowid is not None:
 
             if live.get("error"):
                 st.warning(live["error"])
+                if st.button("실시간 정보 다시 조회", key=f"retry_{sel['rowid']}"):
+                    with st.spinner(f"{sel[api.COL_NAME]} 실시간 정보 재조회 중..."):
+                        st.session_state.weather_cache[sel["rowid"]] = fetch_live_info(sel, active_warnings)
+                    st.rerun()
             if sel.get("카카오맵_url"):
                 st.markdown(f"[카카오맵에서 보기]({sel['카카오맵_url']})")
