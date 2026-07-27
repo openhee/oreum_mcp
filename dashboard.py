@@ -13,7 +13,6 @@ from datetime import datetime, timedelta
 import folium
 import pandas as pd
 import streamlit as st
-from folium.plugins import MarkerCluster
 from streamlit_folium import st_folium
 
 import server as api
@@ -199,7 +198,6 @@ else:
     zoom = 10
 
 m = folium.Map(location=center, zoom_start=zoom)
-cluster = MarkerCluster().add_to(m)
 
 for _, row in df.iterrows():
     rowid = row["rowid"]
@@ -215,7 +213,7 @@ for _, row in df.iterrows():
         tooltip=row[api.COL_NAME],
         popup=folium.Popup(build_popup_html(row, live), max_width=300),
         icon=icon,
-    ).add_to(cluster)
+    ).add_to(m)
 
 ret = st_folium(m, width=None, use_container_width=True, height=650,
                  returned_objects=["last_object_clicked"])
