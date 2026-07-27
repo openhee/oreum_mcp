@@ -5,11 +5,12 @@
 tool 1개(recommend_oreum) 노출: 사용자 조건으로 오름.db를 필터·랭킹하고,
 후보별로 KASI(천문)/KMA(단기예보) 값을 붙여 JSON으로 반환한다.
 
-계산(난이도 상한 결정, 목표시각 스냅, 랭킹, 왕복시간 게이트)은 전부 이 파일이 결정론적으로
-수행하며 LLM에 위임하지 않는다. 왕복시간 게이트는 정밀 예측이 아니라 difficulty(비고 등급)의
-상단값(느린 쪽)으로 근사한, 일몰/일출을 못 맞추는 오름을 보수적으로 걸러내기 위한 판정이다
-(fail 이어도 후보에서 제외하지 않고 경고만 남긴다). 안전 특보 연동, 사용자 좌표 기반 실거리
-계산, 가중치 랭킹은 다음 단계 TODO로 남겨둔다(코드 내 주석 참고).
+계산(난이도 상한 결정, 목표시각 스냅, 랭킹, 왕복시간 게이트, 특보 안전 게이트)은 전부 이 파일이
+결정론적으로 수행하며 LLM에 위임하지 않는다. 왕복시간 게이트는 정밀 예측이 아니라
+difficulty(비고 등급)의 상단값(느린 쪽)으로 근사한, 일몰/일출을 못 맞추는 오름을 보수적으로
+걸러내기 위한 판정이다(fail 이어도 후보에서 제외하지 않고 경고만 남긴다). 안전 게이트도 마찬가지로
+"특보구역 단위" 근사이며(오름 개별 통제 여부 아님) warning 이어도 후보를 제외하지 않는다.
+사용자 좌표 기반 실거리 계산, 가중치 랭킹은 다음 단계 TODO로 남겨둔다(코드 내 주석 참고).
 
 KASI/KMA 호출 로직은 test/test_kasi.py, test/Test_combined.py 에서 검증된 것을
 그대로 이식했다.
@@ -63,7 +64,25 @@ DEFAULT_PACE_MULTIPLIER = 1.0
 ROUND_TRIP_PASS_MARGIN_MIN = 30  # margin >= 이 값 -> pass, 0~미만 -> tight, 미만 -> fail
 SAFE_NIGHT_MAX_DIFFICULTY = 2  # 야간 특례에서 "안전한 오름"으로 안내하는 난이도 상한(note용, 필터 아님)
 
-ROUND_TRIP_STATUS_PRIORITY = {"pass": 0, "tight": 1, "night": 2, "fail": 3, "unknown": 4}
+ROUND_TRIP_STATUS_PRIORITY = {"pass": 0, "n/a": 0, "tight": 1, "night": 2, "fail": 3, "unknown": 4}
+
+# ── 특보(안전) 게이트 상수 ──
+# 특보구역은 산지/중산간처럼 여러 오름을 묶는 넓은 단위라, 이 게이트는 "오름 개별 안전 확인"이
+# 아니라 "그 특보구역에 입산/탐방 위험 특보가 발효 중인지"를 보수적으로 알려주는 참고 정보다.
+# 특보 ≠ 물리적 폐쇄이므로 status 는 "clear"/"warning"/"unknown"만 쓴다("blocked" 금지).
+# API 호출/키 실패는 위험이 아니라 "정보 없음"으로 다뤄 status="unknown"으로 게이트를 통과시킨다.
+KMA_SAFETY_URL = "https://apihub.kma.go.kr/api/typ01/url/wrn_now_data_new.php"
+KMA_SAFETY_TIMEOUT = 15
+
+# 입산/탐방 위험과 직결되는 특보만 남긴다. 폭염/열대야/황사/건조/안개는 입산 통제와 무관한
+# 노이즈라 제외한다. 응답의 WRN이 한글/코드 어느 쪽으로 오는지 확실치 않아 둘 다 넣어둔다.
+SAFETY_RELEVANT_WRN = {
+    "강풍", "풍랑", "호우", "대설", "태풍", "폭풍해일", "한파",
+    "W", "V", "R", "S", "T", "O", "C",
+}
+CONFIDENCE_SAFETY_NOTE = "특보구역 단위(오름 개별 아님), 정상 표고 기준 매핑"
+# clear/unknown 은 "위험 정보 없음"으로 동급 취급, warning만 뒤로 민다.
+SAFETY_STATUS_PRIORITY = {"clear": 0, "unknown": 0, "warning": 1}
 
 # location/난이도 필터가 헐거워 후보가 많이 남을 때, 전부에 대해 순차로 KASI+KMA를
 # 호출하면(오름당 API 2회 왕복) 너무 느리다. 난이도(DB값, API 호출 없음) 기준으로
@@ -83,6 +102,10 @@ class AstroLookupError(Exception):
 
 class WeatherLookupError(Exception):
     """KMA 단기예보 조회 실패."""
+
+
+class SafetyLookupError(Exception):
+    """KMA 특보현황 조회 실패."""
 
 
 # ───────────────────────── 기존 검증 로직 이식 ─────────────────────────
@@ -172,19 +195,93 @@ def sky_rank(weather_at_target):
 
 
 def rank_key(item):
-    """정렬: 왕복 게이트 상태(pass<tight<night<fail<unknown) 우선, 그다음 기존 기준.
+    """정렬: 특보 안전 게이트(clear/unknown < warning) 최우선, 그다음 왕복 게이트 상태
+    (pass≈n/a < tight < night < fail < unknown), 그다음 기존 기준.
 
+    n/a(마감 시각 없음 — 게이트 미적용)는 감점 사유가 아니므로 pass와 동일 우선순위를 쓴다.
     night 상태는 게이트가 무의미하므로 그룹 내에서는 기존 2번째 키(difficulty 오름차순)가
     그대로 "안전한(쉬운) 오름 우선" 가점 역할을 한다 — 별도 키 불필요.
     """
     diff = item["difficulty"] if item["difficulty"] is not None else float("inf")
+    safety_status = (item.get("gates") or {}).get("safety") or {}
+    safety_priority = SAFETY_STATUS_PRIORITY.get(safety_status.get("status"), 0)
     rt_status = (item.get("gates") or {}).get("round_trip") or {}
     rt_priority = ROUND_TRIP_STATUS_PRIORITY.get(rt_status.get("status"), 5)
-    return (rt_priority, diff, sky_rank(item["weather_at_target"]))
+    return (safety_priority, rt_priority, diff, sky_rank(item["weather_at_target"]))
 
 
-def make_safety_gate():
-    return {"status": "unknown", "reason": "특보 연동 전(스텁)"}
+def parse_safety_text(text):
+    """wrn_now_data_new 원문(CSV형 텍스트) → [{reg_id, reg_up, reg_ko, wrn, lvl}, ...].
+
+    '#'로 시작하는 줄(주석/헤더)은 전부 스킵. 데이터 줄은 ','로 split 후 각 필드 .strip()
+    (값에 앞뒤 공백/전각공백이 흔하다). 필드 9개 미만이거나 REG_ID/WRN이 빈 줄은 스킵.
+    컬럼 순서(고정): [0]REG_UP [1]REG_UP_KO [2]REG_ID [3]REG_KO [4]TM_FC [5]TM_EF [6]WRN [7]LVL [8]CMD.
+    파싱 결과 0건이어도 예외 아님 — "특보 없음"으로 정상 처리(호출부 책임).
+    """
+    warnings = []
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        fields = [f.strip() for f in line.split(",")]
+        if len(fields) < 9:
+            continue
+        reg_up, _reg_up_ko, reg_id, reg_ko, _tm_fc, _tm_ef, wrn, lvl, _cmd = fields[:9]
+        if not reg_id or not wrn:
+            continue
+        warnings.append({"reg_id": reg_id, "reg_up": reg_up, "reg_ko": reg_ko, "wrn": wrn, "lvl": lvl})
+    return warnings
+
+
+def filter_safety_relevant(warnings):
+    """입산/탐방 위험과 무관한 특보(폭염/열대야/황사/건조/안개 등)를 제외한다."""
+    return [w for w in warnings if w["wrn"] in SAFETY_RELEVANT_WRN]
+
+
+def fetch_active_safety_warnings():
+    """특보현황 1회 호출 + 파싱 + 입산관련 필터. 실패 시 SafetyLookupError를 그대로 전파한다
+    (호출부에서 status=unknown 으로 처리 — API 실패를 위험으로 취급하지 않는다).
+    반환값은 (발효중인 입산관련 특보 목록, HTTP status code) — status는 notes 로깅용."""
+    text, status_code = kma_safety_now()
+    return filter_safety_relevant(parse_safety_text(text)), status_code
+
+
+def _safety_row_matches(w, warn_reg_id, warn_reg_up):
+    """말단코드(warn_reg_id) 우선 대조, 상위코드(warn_reg_up)로도 대조한다 — 특보가 상위
+    구역 단위로만 발효되는 경우가 있기 때문."""
+    if warn_reg_id and w["reg_id"] == warn_reg_id:
+        return True
+    if warn_reg_up and (w["reg_id"] == warn_reg_up or w["reg_up"] == warn_reg_up):
+        return True
+    return False
+
+
+def build_safety_detail(matched):
+    """중복 제거한 '{구역명} {특보종류}{등급}' 목록을 이어붙여 사람이 읽을 문구로."""
+    parts = []
+    for w in matched:
+        part = f"{w['reg_ko']} {w['wrn']}{w['lvl']}"
+        if part not in parts:
+            parts.append(part)
+    return ", ".join(parts) + " 발효"
+
+
+def match_safety_gate(warn_reg_id, warn_reg_up, active_warnings):
+    """오름의 특보구역코드를 발효 중인 입산관련 특보 목록과 대조해 gates.safety를 만든다.
+
+    active_warnings가 None이면(특보현황 API 호출 자체 실패) "위험 없음"이 아니라
+    "정보 없음(unknown)"으로 게이트를 통과시킨다.
+    """
+    if active_warnings is None:
+        return {"status": "unknown", "detail": "특보 조회 실패", "warnings": []}
+    matched = [w for w in active_warnings if _safety_row_matches(w, warn_reg_id, warn_reg_up)]
+    if not matched:
+        return {"status": "clear", "detail": "발효 중인 입산 관련 특보 없음", "warnings": []}
+    return {
+        "status": "warning",
+        "detail": build_safety_detail(matched),
+        "warnings": [{"type": w["wrn"], "level": w["lvl"], "reg": w["reg_ko"]} for w in matched],
+    }
 
 
 # ───────────────────────── API 호출 ─────────────────────────
@@ -239,6 +336,31 @@ def kma_slots(nx, ny, base_date, base_time):
     for it in items:
         slot.setdefault((it["fcstDate"], it["fcstTime"]), {})[it["category"]] = it["fcstValue"]
     return slot
+
+
+def kma_safety_now():
+    """특보현황(wrn_now_data_new) 원문 조회. 응답은 JSON이 아니라 CSV형 '텍스트'다.
+
+    apihub typ01(php) 엔드포인트는 User-Agent 없는 요청을 403으로 거부하는 것으로 보여
+    브라우저 UA를 붙여 호출한다. 그래도 403이면 authKey를 params dict가 아니라 URL
+    쿼리스트링에 직접 붙여 재시도한다(요청 라이브러리의 이중 URL-encoding 회피).
+    반환값은 (원문 텍스트, 최종 status code) — 호출부가 성공 시에도 status를 notes에
+    남겨 디버깅할 수 있게 한다.
+    """
+    if not KMA_AUTHKEY:
+        raise SafetyLookupError("환경변수 KMA_AUTHKEY 미설정")
+    headers = {"User-Agent": "Mozilla/5.0"}
+    params = {"fe": "f", "tm": "", "disp": "0", "help": "1", "authKey": KMA_AUTHKEY}
+    try:
+        r = requests.get(KMA_SAFETY_URL, params=params, headers=headers, timeout=KMA_SAFETY_TIMEOUT)
+        if r.status_code == 403:
+            url = f"{KMA_SAFETY_URL}?fe=f&tm=&disp=0&help=1&authKey={KMA_AUTHKEY}"
+            r = requests.get(url, headers=headers, timeout=KMA_SAFETY_TIMEOUT)
+        r.raise_for_status()
+    except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
+        status = getattr(getattr(e, "response", None), "status_code", "?")
+        raise SafetyLookupError(f"특보현황 요청 실패(status={status}): {e}") from e
+    return r.text, r.status_code
 
 
 # ───────────────────────── 정규화 / verdict ─────────────────────────
@@ -312,17 +434,27 @@ def round_trip_status(margin_min):
 
 def resolve_target_and_gate(name, purpose, requested_dt, astro_today, target_date_str,
                              lat, lon, difficulty, companion, kasi_cache, notes,
-                             kasi_fetch=kasi_times):
+                             explicit_dt=True, kasi_fetch=kasi_times):
     """목표시각(target_moment)과 왕복 게이트(gates.round_trip)를 함께 정한다.
 
     반환된 target_moment 은 기상(KMA) 슬롯 매칭에도 그대로 재사용해, 게이트가 본 시각과
     verdict/weather_at_target 이 본 시각이 어긋나지 않게 한다.
 
+    목표시각(deadline)은 다음 중 하나일 때만 성립한다:
+      - purpose in ("sunset", "sunrise") → 해당 일몰/일출 시각.
+      - purpose in ("view", None) 이면서 explicit_dt=True(호출자가 datetime_str 을
+        실제로 줬음, now() 폴백이 아님) → requested_dt 그 자체.
+    그 외(= purpose 없고 datetime_str 도 없어 그냥 지금 감)는 deadline 이 없으므로
+    왕복 게이트를 적용하지 않는다(status="n/a"). explicit_dt 는 서버가 now()로 채운 것과
+    사용자가 실제로 명시한 시각을 구분하기 위한 플래그다 — now()를 deadline으로 오인하지
+    않기 위해 반드시 필요하다.
+
     purpose 별 목표시각 정책:
       - sunset/sunrise: 오늘 KASI 값이 기본. requested_dt(=현재시각 취급)가 이미 그 시각을
         지났으면 내일 날짜로 KASI 를 재조회해 내일 값을 목표로 삼는다(오늘 값 재사용 금지).
-      - view/None: requested_dt 자체가 목표시각. 다만 그 시각이 오늘 일몰~일출 사이(야간)이면
-        시간 게이트가 무의미하므로 status="night" 로 대체한다(안전한 오름 우선 안내는 note로만).
+      - view/None + explicit_dt: requested_dt 자체가 목표시각. 다만 그 시각이 오늘
+        일몰~일출 사이(야간)이면 시간 게이트가 무의미하므로 status="night" 로 대체한다
+        (안전한 오름 우선 안내는 note로만).
     """
     pace_label = companion_pace_label(companion)
     base_note = f"{pace_label} 페이스 기준, 비고 등급 근사"
@@ -358,6 +490,19 @@ def resolve_target_and_gate(name, purpose, requested_dt, astro_today, target_dat
             else:
                 target_moment = t_today
                 target_basis = f"{purpose}_today"
+    elif not explicit_dt:
+        # 마감(deadline) 자체가 없는 경우 — 왕복 게이트를 적용하지 않는다. requested_dt는
+        # 기상(KMA) 슬롯 매칭용으로만 재사용하고, target_time 은 게이트 응답에서 null로 낸다.
+        gate = {
+            "status": "n/a",
+            "est_min": est_min,
+            "remaining_min": None,
+            "margin_min": None,
+            "target_time": None,
+            "target_basis": "no_deadline",
+            "note": "마감 시각 없음 — 왕복 게이트 미적용(참고 소요시간만)",
+        }
+        return requested_dt, gate
     else:
         target_moment = requested_dt
         target_basis = "user_time"
@@ -440,13 +585,15 @@ def cached_call(cache, key, fn):
 # ───────────────────────── 후보별 빌드 ─────────────────────────
 
 def build_candidate(row, purpose, requested_dt, base_date, base_time, companion,
-                     kasi_cache, kma_cache, notes):
+                     kasi_cache, kma_cache, notes, active_warnings, explicit_dt):
     name = row[COL_NAME]
     lat, lon = row[COL_LAT], row[COL_LON]
     db_nx, db_ny = row[COL_NX], row[COL_NY]
     difficulty = row["difficulty"]
 
-    confidence = {"astro": "no_coords", "weather": "no_grid",
+    safety_gate = match_safety_gate(row["warn_reg_id"], row["warn_reg_up"], active_warnings)
+
+    confidence = {"astro": "no_coords", "weather": "no_grid", "safety": CONFIDENCE_SAFETY_NOTE,
                   "grid_source": None, "cache_hit": {"astro": False, "weather": False}}
     astro = None
     weather_norm = None
@@ -473,7 +620,7 @@ def build_candidate(row, purpose, requested_dt, base_date, base_time, companion,
         # (내일로 넘어갈 수 있어 여기서 기상 슬롯 매칭에 쓸 target_moment 도 함께 정한다)
         target_moment, round_trip_gate = resolve_target_and_gate(
             name, purpose, requested_dt, astro, target_date_str,
-            lat, lon, difficulty, companion, kasi_cache, notes)
+            lat, lon, difficulty, companion, kasi_cache, notes, explicit_dt=explicit_dt)
 
         # ---- 격자 결정 ----
         nx = ny = None
@@ -524,7 +671,7 @@ def build_candidate(row, purpose, requested_dt, base_date, base_time, companion,
         "astro": astro,
         "weather_at_target": weather_norm,
         "verdict": verdict_text,
-        "gates": {"safety": make_safety_gate(), "round_trip": round_trip_gate},
+        "gates": {"safety": safety_gate, "round_trip": round_trip_gate},
         "confidence": confidence,
     }
 
@@ -560,9 +707,11 @@ def recommend_oreum(
         dict: query_echo(입력/해석값), count(반환된 결과 수), results[](오름별 상세),
         notes[](필터 사유, 부분 실패, 최종 반환 요약 등 사람이 읽을 메모).
         results[].gates.round_trip 은 difficulty 등급 근사 기반 왕복시간 게이트
-        (status: pass/tight/fail/night/unknown)다 — 정밀 예측이 아니라 목표시각(일몰/일출/
+        (status: pass/tight/fail/night/n/a/unknown)다 — 정밀 예측이 아니라 목표시각(일몰/일출/
         지정시각)을 못 맞출 후보를 보수적으로 걸러내기 위한 값이며, fail 이어도 후보는
-        제외하지 않고 목록에 남는다(정렬만 뒤로 밀림).
+        제외하지 않고 목록에 남는다(정렬만 뒤로 밀림). purpose도 없고 datetime_str도 없어
+        마감 시각 자체가 없는 경우(그냥 지금 감)는 게이트를 적용하지 않고 status="n/a"로
+        표시한다(감점 없음, pass와 동급).
     """
     notes: list[str] = []
     now = datetime.now()
@@ -570,6 +719,9 @@ def recommend_oreum(
     requested_dt, dt_note = parse_target_datetime(datetime_str, now)
     if dt_note:
         notes.append(dt_note)
+    # datetime_str 이 실제로 주어졌고(now() 폴백이 아니고) 파싱도 성공했을 때만 "명시적
+    # 목표시각"으로 취급한다 — 서버가 now()로 채운 값을 목표시각(deadline)으로 오인하지 않기 위함.
+    explicit_dt = bool(datetime_str) and dt_note is None
 
     if companion and companion not in COMPANION_MAX_DIFFICULTY:
         notes.append(f"알 수 없는 companion 값 '{companion}' → 난이도 제한 없음으로 처리")
@@ -605,9 +757,18 @@ def recommend_oreum(
     kasi_cache: dict = {}
     kma_cache: dict = {}
 
+    # 특보현황은 후보마다 부르지 않고 요청당 1회만 호출해 전체 발효목록을 얻은 뒤,
+    # 각 오름은 그 목록과 메모리에서만 대조한다.
+    try:
+        active_warnings, safety_status_code = fetch_active_safety_warnings()
+        notes.append(f"특보현황 조회 성공 (status={safety_status_code}, 입산관련 {len(active_warnings)}건)")
+    except SafetyLookupError as e:
+        active_warnings = None
+        notes.append(f"특보현황 조회 실패 - {e} → 안전 게이트는 전체 unknown 처리(위험으로 취급하지 않음)")
+
     enriched = [
         build_candidate(row, purpose, requested_dt, base_date, base_time, companion,
-                         kasi_cache, kma_cache, notes)
+                         kasi_cache, kma_cache, notes, active_warnings, explicit_dt)
         for row in rows_to_enrich
     ]
     # TODO(next): 난이도/SKY 단순 정렬 대신 가중치 랭킹(바람/강수확률/사용자 선호 가중합 등)으로 교체.

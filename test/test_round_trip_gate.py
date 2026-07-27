@@ -3,11 +3,13 @@
 왕복시간 게이트(gates.round_trip) 검증 — 목데이터, API/DB 호출 없음.
 
 server.py 의 resolve_target_and_gate() 를 합성 astro 딕셔너리로 직접 호출해
-4가지 정책 분기를 재현한다:
+정책 분기를 재현한다:
   1) 낮 + 일몰 목표 + 쉬운 오름           → pass
   2) 일몰 49분 전 + 힘든 오름(등급4,애기) → fail (margin 음수)
   3) 20:00 현재 + 일몰 목표               → 내일 일몰로 롤오버, target_basis=sunset_tomorrow
-  4) 22:00 현재 + purpose=None            → night
+  4) 22:00 현재 + purpose=None            → night (explicit_dt 기본값 True → 회귀 확인)
+  5) purpose=None + explicit_dt=False     → 마감 없음 → status="n/a" (버그 수정 검증)
+  6) purpose=None + explicit_dt=True(사용자가 18:00 명시) → deadline 성립, 정상 게이트 판정
 
 시나리오 3만 "내일 KASI 재조회"가 필요한데, 실제 네트워크를 부르지 않도록
 kasi_fetch 자리에 고정값을 돌려주는 mock 함수를 주입한다(resolve_target_and_gate 는
@@ -90,5 +92,37 @@ gate4 = run_case(
     lat=33.4, lon=126.5, difficulty=3, companion=None,
 )
 assert gate4["status"] == "night", gate4
+
+# 5) purpose 없음 + datetime_str 없음(=explicit_dt=False) → 마감 없음 → n/a
+#    (버그: 예전엔 now()를 목표시각으로 오인해 remaining_min=0 → 전부 fail 이었음)
+astro_today_5 = {"sunrise": "05:30", "sunset": "19:38"}
+gate5 = run_case(
+    "5) purpose=None + explicit_dt=False(마감 없음) → n/a 기대",
+    name="테스트오름5", purpose=None,
+    requested_dt=datetime(2026, 7, 27, 11, 0),
+    astro_today=astro_today_5, target_date_str="20260727",
+    lat=33.4, lon=126.5, difficulty=3, companion=None,
+    explicit_dt=False,
+)
+assert gate5["status"] == "n/a", gate5
+assert gate5["remaining_min"] is None, gate5
+assert gate5["margin_min"] is None, gate5
+assert gate5["target_time"] is None, gate5
+assert gate5["target_basis"] == "no_deadline", gate5
+assert gate5["est_min"] is not None, gate5  # 참고용 소요시간은 그대로 계산됨
+
+# 6) purpose 없음 + datetime_str 명시(18:00, explicit_dt=True) → deadline 성립 → 정상 게이트
+astro_today_6 = {"sunrise": "05:30", "sunset": "19:38"}
+gate6 = run_case(
+    "6) purpose=None + explicit_dt=True(18:00 명시) → 정상 게이트 판정",
+    name="테스트오름6", purpose=None,
+    requested_dt=datetime(2026, 7, 27, 18, 0),
+    astro_today=astro_today_6, target_date_str="20260727",
+    lat=33.4, lon=126.5, difficulty=1, companion=None,
+    explicit_dt=True,
+)
+assert gate6["status"] != "n/a", gate6
+assert gate6["target_basis"] == "user_time", gate6
+assert gate6["remaining_min"] is not None, gate6
 
 print("\n모든 시나리오 통과.")
