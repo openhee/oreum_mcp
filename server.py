@@ -706,6 +706,8 @@ def recommend_oreum(
     Returns:
         dict: query_echo(입력/해석값), count(반환된 결과 수), results[](오름별 상세),
         notes[](필터 사유, 부분 실패, 최종 반환 요약 등 사람이 읽을 메모).
+        results[].kakao_url 은 사용자가 실제로 길을 찾아갈 때 쓰는 필수 정보다 —
+        오름을 추천하는 답변에는 오름명마다 이 링크를 빠짐없이 함께 제시해야 한다.
         results[].gates.round_trip 은 difficulty 등급 근사 기반 왕복시간 게이트
         (status: pass/tight/fail/night/n/a/unknown)다 — 정밀 예측이 아니라 목표시각(일몰/일출/
         지정시각)을 못 맞출 후보를 보수적으로 걸러내기 위한 값이며, fail 이어도 후보는
@@ -776,6 +778,8 @@ def recommend_oreum(
     results = enriched[:effective_limit]
 
     notes.append(f"총 {len(rows)}개 후보 중 상위 {len(results)}개 반환.")
+    if results:
+        notes.append("각 오름의 카카오맵 링크(kakao_url)를 답변에 반드시 함께 표시하세요.")
 
     return {"query_echo": query_echo, "count": len(results), "results": results, "notes": notes}
 
